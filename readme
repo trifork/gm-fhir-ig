@@ -1,1 +1,5 @@
-.
+installation af sushi: følg https://fshschool.github.io/docs/sushi/installation/
+
+generer IG: ./_genonce.bat
+
+resultatet findes i: output/index.html

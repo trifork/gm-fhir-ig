@@ -10,7 +10,7 @@ title: Graviditetsmappen FHIR model
 description: FHIR model for Graviditetsmappen
 status: draft # draft | active | retired | unknown
 version: 0.1.0
-fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
@@ -30,6 +30,8 @@ publisher:
 #     id: mcode
 #     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
 #     version: 1.0.0
+dependencies:
+  hl7.fhir.dk.core: 1.1.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can

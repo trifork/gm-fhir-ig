@@ -1,5 +1,3 @@
-
-
 ValueSet: BarnDisponeret
 Id: barn-disponeret-vs
 Title: "Barn Disponeret Value Set"

@@ -10,7 +10,7 @@ title: Graviditetsmappen FHIR model
 description: FHIR model for Graviditetsmappen
 status: draft # draft | active | retired | unknown
 version: 0.1.0
-fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
@@ -64,6 +64,8 @@ dependencies:
 # For parameters defined by the FHIR Tools IG see:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
+parameters:
+  path-expansion-params: Parameters-expParam.json
 # parameters:
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]

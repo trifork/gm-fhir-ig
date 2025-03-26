@@ -1,6 +1,6 @@
-Profile: gm-allergisk-disposition
-Id: AllergiskDisposition
-Parent: gm-model-element-observation
+Profile: GMAllergiskDisposition
+Id: GMAllergiskDisposition
+Parent: GMModelElement
 
 // code for the model element
 * code.coding.code = #2903021000005101
@@ -18,4 +18,4 @@ Parent: gm-model-element-observation
 * component[barnet-disponeret-for-allergisk-sygdom].code.coding.code = #609328004
 // type of child component
 * component[barnet-disponeret-for-allergisk-sygdom].value[x] only CodeableConcept
-* component[barnet-disponeret-for-allergisk-sygdom].valueCodeableConcept from barn-disponeret-vs
+* component[barnet-disponeret-for-allergisk-sygdom].valueCodeableConcept from VS-barn-disponeret

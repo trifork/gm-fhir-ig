@@ -1,6 +1,6 @@
-Profile: gm-arbejdsmiljøpåvirkning
-Id: Arbejdsmiljoepaavirkning
-Parent: gm-model-element-observation
+Profile: GMArbejdsmiljoepaavirkning
+Id: GMArbejdsmiljoepaavirkning
+Parent: GMModelElement
 
 // code for the model element
 * code.coding.code = #598021000005104
@@ -10,7 +10,7 @@ Parent: gm-model-element-observation
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // child components
-* component 0..12
+* component 0..*
 * component contains
     arbejdstidspunkt 0..1 and
     den-gravides-arbejde 0..1 and
@@ -20,13 +20,13 @@ Parent: gm-model-element-observation
     dato-for-start-af-påvirkningsperiode 0..1 and
     dato-for-afslutning-af-påvirkningsperiode 0..1 and
     henvist-til-arbejdsmedicinsk-klinik 0..1 and
-    type-af-arbejdsmiljøpåvirkning 0..4
+    type-af-arbejdsmiljøpåvirkning 0..*
 
 // code of child component
 * component[arbejdstidspunkt].code.coding.code = #648031000005103
 // type of child component
 * component[arbejdstidspunkt].value[x] only CodeableConcept
-* component[arbejdstidspunkt].valueCodeableConcept from arbejdstidspunkt-vs
+* component[arbejdstidspunkt].valueCodeableConcept from VS-arbejdstidspunkt
 
 // code of child component
 * component[den-gravides-arbejde].code.coding.code = #184104002
@@ -67,4 +67,4 @@ Parent: gm-model-element-observation
 * component[type-af-arbejdsmiljøpåvirkning].code.coding.code = #598021000005104
 // type of child component
 * component[type-af-arbejdsmiljøpåvirkning].value[x] only CodeableConcept
-* component[type-af-arbejdsmiljøpåvirkning].valueCodeableConcept from arbejdsmiljoepaavirkning-vs
+* component[type-af-arbejdsmiljøpåvirkning].valueCodeableConcept from VS-arbejdsmiljoepaavirkning

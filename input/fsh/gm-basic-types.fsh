@@ -1,5 +1,5 @@
-Profile: gm-model-element-observation
-Id: ModelElement
+Profile: GMModelElement
+Id: GMModelElement
 Parent: Observation
 // Resource
 * id 1..1
@@ -69,7 +69,7 @@ Parent: Observation
 * component.interpretation 0..0
 * component.referenceRange 0..0
 
-Profile: gm-base-observation
+Profile: GMBaseObservation
 Id: GMBaseObservation
 Parent: Observation
 // Resource
@@ -140,7 +140,7 @@ Parent: Observation
 * component.interpretation 0..0
 * component.referenceRange 0..0
 
-Profile: gm-base-list
+Profile: GMBaseList
 Id: GMBaseList
 Parent: List
 // Resource
@@ -182,35 +182,35 @@ Parent: List
 * entry.date 0..0
 * emptyReason 0..0
 
-Profile: gm-model-element-list
+Profile: GMModelElementList
 Id: GMModelElementList
 Parent: GMBaseList
 * source 0..0
 * code.coding.system = $sct
 
-Profile: gm-document-list
+Profile: GMDocumentList
 Id: GMDocumentList
 Parent: GMBaseList
 * source 1..1
 * source only Reference(DkCoreOrganization)
 * code.coding.system = "urn:oid:1.2.208.184.100.1"
 
-Profile: gm-prf-document-list
+Profile: GMPRFDocumentList
 Id: GMPRFDocumentList
 Parent: GMDocumentList
 * title 1..1
 * title = "Svangerskabsjournal"
 * code.coding.code = #PRF
-* entry.item only Reference(AllergiskDisposition or Arbejdsmiljoepaavirkning)
+* entry.item only Reference(GMAllergiskDisposition or GMArbejdsmiljoepaavirkning or GMAllergiskDispositionList or GMArbejdsmiljoepaavirkningList or GMSocialeForholdList)
 
-Profile: gm-pscr-document-list
+Profile: GMPSCRDocumentList
 Id: GMPSCRDocumentList
 Parent: GMDocumentList
 * title 1..1
 * title = "Vandrejournal"
 * code.coding.code = #PSCR
 
-Profile: gm-pmr-document-list
+Profile: GMPMRDocumentList
 Id: GMPMRDocumentList
 Parent: GMDocumentList
 * title 1..1

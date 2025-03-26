@@ -10,7 +10,7 @@ Parent: gm-model-element-observation
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // child components
-* component 0..8
+* component 0..12
 * component contains
     arbejdstidspunkt 0..1 and
     den-gravides-arbejde 0..1 and
@@ -19,7 +19,8 @@ Parent: gm-model-element-observation
     art-af-påvirkning 0..1 and
     dato-for-start-af-påvirkningsperiode 0..1 and
     dato-for-afslutning-af-påvirkningsperiode 0..1 and
-    henvist-til-arbejdsmedicinsk-klinik 0..1
+    henvist-til-arbejdsmedicinsk-klinik 0..1 and
+    type-af-arbejdsmiljøpåvirkning 0..4
 
 // code of child component
 * component[arbejdstidspunkt].code.coding.code = #648031000005103
@@ -61,3 +62,9 @@ Parent: gm-model-element-observation
 * component[henvist-til-arbejdsmedicinsk-klinik].code.coding.code = #306152009
 // type of child component
 * component[henvist-til-arbejdsmedicinsk-klinik].value[x] only boolean
+
+// code of child component
+* component[type-af-arbejdsmiljøpåvirkning].code.coding.code = #598021000005104
+// type of child component
+* component[type-af-arbejdsmiljøpåvirkning].value[x] only CodeableConcept
+* component[type-af-arbejdsmiljøpåvirkning].valueCodeableConcept from arbejdsmiljoepaavirkning-vs

@@ -1,12 +1,12 @@
 Profile: gm-allergisk-disposition-list
 Id: AllergiskDispositionList
-Parent: gm-model-element-list
+Parent: GMModelElementList
 
 // code for the model element
 * code.coding.code = #2903021000005101
 * entry 0..1
+* entry ^short = "0..1 of each reference"
 * entry.item only Reference(AllergiskDispositionObs)
-
 
 Profile: gm-allergisk-disposition-obs
 Id: AllergiskDispositionObs

@@ -109,6 +109,7 @@ Parent: Observation
 * effective[x] only dateTime
 * issued 0..0
 * performer 0..0
+* value[x] 1..1
 * dataAbsentReason 0..0
 * interpretation 0..0
 * note 0..0

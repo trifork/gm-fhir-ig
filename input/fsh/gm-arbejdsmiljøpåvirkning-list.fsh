@@ -1,11 +1,12 @@
 Profile: gm-arbejdsmiljøpåvirkning-list
 Id: ArbejdsmiljoepaavirkningList
-Parent: gm-model-element-list
+Parent: GMModelElementList
 
 // code for the model element
 * code.coding.code = #598021000005104
-* entry 0..8
-* entry.item only Reference(ArbejdstidspunktObs or DenGravidesArbejdeObs or TimerPrUgeObs or PartnersArbejdeObs or ArtAfPaavirkningObs or DatoForStartAfPaavirkningsperiodeObs or DatoForAfslutningAfPaavirkningsperiodeObs or HenvistTilArbejdsmedicinskKlinikObs)
+* entry 0..12
+* entry ^short = "0..1 of each reference, except for reference to gm-type-af-arbejdsmiljøpåvirkning-list, which is 0..4"
+* entry.item only Reference(ArbejdstidspunktObs or DenGravidesArbejdeObs or TimerPrUgeObs or PartnersArbejdeObs or ArtAfPaavirkningObs or DatoForStartAfPaavirkningsperiodeObs or DatoForAfslutningAfPaavirkningsperiodeObs or HenvistTilArbejdsmedicinskKlinikObs or TypeAfArbejdsmiljoepaavirkningList)
 
 Profile: gm-arbejdstidspunkt-obs
 Id: ArbejdstidspunktObs
@@ -78,4 +79,22 @@ Parent: GMBaseObservation
 * code.coding.code = #306152009
 // type of child component
 * value[x] only boolean
+* component 0..0
+
+Profile: gm-type-af-arbejdsmiljøpåvirkning-list
+Id: TypeAfArbejdsmiljoepaavirkningList
+Parent: GMModelElementList
+* code.coding.code = #598021000005104
+* entry 0..1
+* entry ^short = "0..1 of each reference"
+* entry.item only Reference(TypeAfArbejdsmiljoepaavirkningObs)
+
+Profile: gm-type-af-arbejdsmiljøpåvirkning-obs
+Id: TypeAfArbejdsmiljoepaavirkningObs
+Parent: GMBaseObservation
+// code of child component
+* code.coding.code = #598021000005104
+// type of child component
+* value[x] only CodeableConcept
+* valueCodeableConcept from arbejdsmiljoepaavirkning-vs
 * component 0..0

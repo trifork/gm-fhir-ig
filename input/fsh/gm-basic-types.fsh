@@ -13,9 +13,9 @@ Parent: Observation
 * modifierExtension 0..0
 // Observation
 * identifier 0..0
-//* instantiates[x] 0..0
+* instantiates[x] 0..0
 * basedOn 0..0
-//* triggeredBy 0..0
+* triggeredBy 0..0
 * partOf 0..0
 * status = #final
 * category 0..0
@@ -43,7 +43,7 @@ Parent: Observation
 * interpretation 0..0
 * note 0..0
 * bodySite 0..0
-//* bodyStructure 0..0
+* bodyStructure 0..0
 * method 0..0
 * specimen 0..0
 * device 0..0

@@ -121,24 +121,7 @@ Parent: Observation
 * referenceRange 0..0
 * hasMember 0..0
 * derivedFrom 0..0
-* component.id 0..0
-* component.extension 0..0
-* component.modifierExtension 0..0
-* component.code.id 0..0
-* component.code.extension 0..0
-* component.code.coding 1..1
-* component.code.coding.id 0..0
-* component.code.coding.extension 0..0
-* component.code.coding.system 1..1
-* component.code.coding.system = $sct
-* component.code.coding.version 0..0
-* component.code.coding.code 1..1
-* component.code.coding.userSelected 0..0
-* component.value[x] 1..1
-* component.code.text 0..0
-* component.dataAbsentReason 0..0
-* component.interpretation 0..0
-* component.referenceRange 0..0
+* component 0..0
 
 Profile: GMBaseList
 Id: GMBaseList

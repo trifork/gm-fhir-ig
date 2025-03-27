@@ -17,7 +17,6 @@ Parent: GMBaseObservation
 * code.coding.code = #224085006
 // type of child component
 * value[x] only string
-* component 0..0
 
 
 Profile: GMBoligforholdObs
@@ -29,7 +28,6 @@ Parent: GMBaseObservation
 // type of child component
 * value[x] only CodeableConcept
 * valueCodeableConcept from VS-boligforhold
-* component 0..0
 
 
 Profile: GMJuridiskMedforaelderList
@@ -51,7 +49,6 @@ Parent: GMBaseObservation
 * code.coding.code = #567901000005107
 // type of child component
 * value[x] only string
-* component 0..0
 
 
 Profile: GMJuridiskMedforaeldersNavnObs
@@ -62,7 +59,6 @@ Parent: GMBaseObservation
 * code.coding.code = #703503000
 // type of child component
 * value[x] only string
-* component 0..0
 
 
 Profile: GMPartnerList
@@ -84,7 +80,6 @@ Parent: GMBaseObservation
 * code.coding.code = #703503000
 // type of child component
 * value[x] only string
-* component 0..0
 
 
 Profile: GMPartnerrelationObs
@@ -96,4 +91,4 @@ Parent: GMBaseObservation
 // type of child component
 * value[x] only CodeableConcept
 * valueCodeableConcept from VS-partnerrelation
-* component 0..0
+

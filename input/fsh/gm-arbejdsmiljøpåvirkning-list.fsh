@@ -16,7 +16,6 @@ Parent: GMBaseObservation
 // type of child component
 * value[x] only CodeableConcept
 * valueCodeableConcept from VS-arbejdstidspunkt
-* component 0..0
 
 Profile: GMDenGravidesArbejdeObs
 Id: GMDenGravidesArbejdeObs
@@ -25,7 +24,6 @@ Parent: GMBaseObservation
 * code.coding.code = #184104002
 // type of child component
 * value[x] only string
-* component 0..0
 
 Profile: GMTimerPrUgeObs
 Id: GMTimerPrUgeObs
@@ -34,7 +32,6 @@ Parent: GMBaseObservation
 * code.coding.code = #229791003
 // type of child component
 * value[x] only integer
-* component 0..0
 
 Profile: GMPartnersArbejdeObs
 Id: GMPartnersArbejdeObs
@@ -43,7 +40,6 @@ Parent: GMBaseObservation
 * code.coding.code = #1252646008
 // type of child component
 * value[x] only string
-* component 0..0
 
 Profile: GMArtAfPaavirkningObs
 Id: GMArtAfPaavirkningObs
@@ -52,7 +48,6 @@ Parent: GMBaseObservation
 * code.coding.code = #398005008
 // type of child component
 * value[x] only string
-* component 0..0
 
 Profile: GMDatoForStartAfPaavirkningsperiodeObs
 Id: GMDatoForStartAfPaavirkningsperiodeObs
@@ -61,7 +56,6 @@ Parent: GMBaseObservation
 * code.coding.code = #398201009
 // type of child component
 * value[x] only dateTime
-* component 0..0
 
 Profile: GMDatoForAfslutningAfPaavirkningsperiodeObs
 Id: GMDatoForAfslutningAfPaavirkningsperiodeObs
@@ -70,7 +64,6 @@ Parent: GMBaseObservation
 * code.coding.code = #397898000
 // type of child component
 * value[x] only dateTime
-* component 0..0
 
 Profile: GMHenvistTilArbejdsmedicinskKlinikObs
 Id: GMHenvistTilArbejdsmedicinskKlinikObs
@@ -79,7 +72,6 @@ Parent: GMBaseObservation
 * code.coding.code = #306152009
 // type of child component
 * value[x] only boolean
-* component 0..0
 
 Profile: GMTypeAfArbejdsmiljoepaavirkningList
 Id: GMTypeAfArbejdsmiljoepaavirkningList
@@ -97,4 +89,3 @@ Parent: GMBaseObservation
 // type of child component
 * value[x] only CodeableConcept
 * valueCodeableConcept from VS-arbejdsmiljoepaavirkning
-* component 0..0

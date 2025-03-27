@@ -17,4 +17,3 @@ Parent: GMBaseObservation
 // type of child component
 * value[x] only CodeableConcept
 * valueCodeableConcept from VS-barn-disponeret
-* component 0..0

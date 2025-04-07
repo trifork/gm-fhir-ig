@@ -1,21 +1,18 @@
-Profile: GMAllergiskDisposition
-Id: GMAllergiskDisposition
-Parent: GMModelElement
-
+Profile: GMAllergiskDispositionList
+Id: GMAllergiskDispositionList
+Parent: GMModelElementList
 // code for the model element
 * code.coding.code = #2903021000005101
-// slicing rules
-* component ^slicing.discriminator.type = #value
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.ordered = false
-* component ^slicing.rules = #open
-// how many child components
-* component 0..1
-* component contains
-    barnet-disponeret-for-allergisk-sygdom 0..1
+* entry 0..*
+* entry ^short = "0..1 of each reference"
+* entry.item only Reference(GMBarnDisponeretObs)
 
+
+Profile: GMBarnDisponeretObs
+Id: GMBarnDisponeretObs
+Parent: GMBaseObservation
 // code of child component
-* component[barnet-disponeret-for-allergisk-sygdom].code.coding.code = #609328004
+* code.coding.code = #609328004
 // type of child component
-* component[barnet-disponeret-for-allergisk-sygdom].value[x] only CodeableConcept
-* component[barnet-disponeret-for-allergisk-sygdom].valueCodeableConcept from VS-barn-disponeret
+* value[x] only CodeableConcept
+* valueCodeableConcept from VS-barn-disponeret

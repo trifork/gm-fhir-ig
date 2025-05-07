@@ -1,54 +1,53 @@
-Profile: GMFamiliehistorieArveligeSygdommeList
-Id: GMFamiliehistorieArveligeSygdommeList
-Parent: GMModelElementList
+Profile: GMFamiliehistorieArveligeSygdommeObs
+Id: GMFamiliehistorieArveligeSygdommeObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #416471007
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMBemaerkningerGenetiskMedfoedtSygdomTilstandObs or GMFamilieMedArveligSygdomTilstandObs or GMBemaerkningerMedfoedteMisdannelserObs or GMFamilieMedMedfoedteMisdannelserObs or GMIndikationForHenvisningTilUdredningScreeningObs or GMHaemoglobinopatiscreeningList or GMHaemoglobinopatiIFamilienList)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..5
+* component contains
+    bemærkninger-genetisk/medfødt-sygdom/tilstand 0..1 and
+    familie-med-arvelig-sygdom/tilstand 0..1 and
+    bemærkninger-medfødte-misdannelser 0..1 and
+    familie-med-medfødte-misdannelser 0..1 and
+    indikation-for-henvisning-til-udredning/screening 0..1
 
-
-Profile: GMBemaerkningerGenetiskMedfoedtSygdomTilstandObs
-Id: GMBemaerkningerGenetiskMedfoedtSygdomTilstandObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #648001000005109
+* component[bemærkninger-genetisk/medfødt-sygdom/tilstand].code.coding.code = #648001000005109
 // type of child component
-* value[x] only string
+* component[bemærkninger-genetisk/medfødt-sygdom/tilstand].value[x] only string
 
-
-Profile: GMFamilieMedArveligSygdomTilstandObs
-Id: GMFamilieMedArveligSygdomTilstandObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #429962007
+* component[familie-med-arvelig-sygdom/tilstand].code.coding.code = #429962007
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-tilstands-svaerhedsgrad
-
-Profile: GMBemaerkningerMedfoedteMisdannelserObs
-Id: GMBemaerkningerMedfoedteMisdannelserObs
-Parent: GMBaseObservation
+* component[familie-med-arvelig-sygdom/tilstand].value[x] only CodeableConcept
+* component[familie-med-arvelig-sygdom/tilstand].valueCodeableConcept from VS-tilstands-svaerhedsgrad
 // code of child component
-* code.coding.code = #617971000005107
+* component[bemærkninger-medfødte-misdannelser].code.coding.code = #617971000005107
 // type of child component
-* value[x] only string
+* component[bemærkninger-medfødte-misdannelser].value[x] only string
 
-
-Profile: GMFamilieMedMedfoedteMisdannelserObs
-Id: GMFamilieMedMedfoedteMisdannelserObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #597941000005106
+* component[familie-med-medfødte-misdannelser].code.coding.code = #597941000005106
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-tilstands-svaerhedsgrad
-
-Profile: GMIndikationForHenvisningTilUdredningScreeningObs
-Id: GMIndikationForHenvisningTilUdredningScreeningObs
-Parent: GMBaseObservation
+* component[familie-med-medfødte-misdannelser].value[x] only CodeableConcept
+* component[familie-med-medfødte-misdannelser].valueCodeableConcept from VS-tilstands-svaerhedsgrad
 // code of child component
-* code.coding.code = #617991000005108
+* component[indikation-for-henvisning-til-udredning/screening].code.coding.code = #617991000005108
 // type of child component
-* value[x] only boolean
+* component[indikation-for-henvisning-til-udredning/screening].value[x] only boolean
 
+* extension[GMModelElementReference] 0..2
+// child model elements
+* extension[GMModelElementReference] contains
+    Hæmoglobinopatiscreening 0..1 and
+    HæmoglobinopatiIFamilien 0..1
+
+* extension[GMModelElementReference][Hæmoglobinopatiscreening].valueReference only Reference(GMHaemoglobinopatiscreeningObs)
+* extension[GMModelElementReference][HæmoglobinopatiIFamilien].valueReference only Reference(GMHaemoglobinopatiIFamilienObs)

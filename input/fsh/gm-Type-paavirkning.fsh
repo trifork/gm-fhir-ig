@@ -1,18 +1,22 @@
-Profile: GMTypePaavirkningList
-Id: GMTypePaavirkningList
-Parent: GMModelElementList
+Profile: GMTypePaavirkningObs
+Id: GMTypePaavirkningObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #598021000005104
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMTypeAfArbejdsmiljoepaavirkningObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    type-af-arbejdsmiljøpåvirkning 0..1
 
-
-Profile: GMTypeAfArbejdsmiljoepaavirkningObs
-Id: GMTypeAfArbejdsmiljoepaavirkningObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598021000005104
+* component[type-af-arbejdsmiljøpåvirkning].code.coding.code = #598021000005104
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-paavirkningstype
+* component[type-af-arbejdsmiljøpåvirkning].value[x] only CodeableConcept
+* component[type-af-arbejdsmiljøpåvirkning].valueCodeableConcept from VS-paavirkningstype
+* extension[GMModelElementReference] 0..0

@@ -1,27 +1,28 @@
-Profile: GMScreeningsplanlaegningList
-Id: GMScreeningsplanlaegningList
-Parent: GMModelElementList
+Profile: GMScreeningsplanlaegningObs
+Id: GMScreeningsplanlaegningObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #313199003
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMScreeningstypeObs or GMStatusObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..2
+* component contains
+    screeningstype 0..1 and
+    status 0..1
 
-
-Profile: GMScreeningstypeObs
-Id: GMScreeningstypeObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #243787009
+* component[screeningstype].code.coding.code = #243787009
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-screeningstype
-
-Profile: GMStatusObs
-Id: GMStatusObs
-Parent: GMBaseObservation
+* component[screeningstype].value[x] only CodeableConcept
+* component[screeningstype].valueCodeableConcept from VS-screeningstype
 // code of child component
-* code.coding.code = #243876005
+* component[status].code.coding.code = #243876005
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-screeningsstatus
+* component[status].value[x] only CodeableConcept
+* component[status].valueCodeableConcept from VS-screeningsstatus
+* extension[GMModelElementReference] 0..0

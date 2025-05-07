@@ -1,18 +1,10 @@
 Profile: GMGlucoseMeasurementObs
 Id: GMGlucoseMeasurementObs
-Parent: GMBaseObservation
+Parent: GMIntervalObservation
 // code of child component
 * code.coding.code = #251396006
 // type of value
-* value[x] only Quantity
-* valueQuantity.id 0..0
-* valueQuantity.extension 0..0
-* valueQuantity.value 1..1
-* valueQuantity.unit 1..1
-* valueQuantity.unit = "mmol/L"
-* valueQuantity.comparator 0..0
-* valueQuantity.system 1..1
-* valueQuantity.system = $sct
-* valueQuantity.code 1..1
-* valueQuantity.code = #258813002
-
+* extension[GMQuantityInterval].extension[low].value[x].unit = "mmol/L"
+* extension[GMQuantityInterval].extension[low].value[x].code = #258813002
+* extension[GMQuantityInterval].extension[high].value[x].unit = "mmol/L"
+* extension[GMQuantityInterval].extension[high].value[x].code = #258813002

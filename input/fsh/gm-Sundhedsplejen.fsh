@@ -1,30 +1,40 @@
-Profile: GMSundhedsplejenList
-Id: GMSundhedsplejenList
-Parent: GMModelElementList
+Profile: GMSundhedsplejenObs
+Id: GMSundhedsplejenObs
+Parent: GMModelElement
 // code for the model element
 * code.coding.code = #554021000005101
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMSundhedsplejerskeList or GMSundhedsplejenUdpegerOrganization)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..0
+// child model elements
+* extension[GMModelElementReference] 0..2
+* extension[GMModelElementReference] contains
+    Sundhedsplejerske 0..1 and
+    SundhedsplejenUdpeger 0..1
+* extension[GMModelElementReference][Sundhedsplejerske].valueReference only Reference(GMSundhedsplejerskeObs)
+* extension[GMModelElementReference][SundhedsplejenUdpeger].valueReference only Reference(GMSundhedsplejenUdpegerOrganization)
 
 
-Profile: GMSundhedsplejerskeList
-Id: GMSundhedsplejerskeList
-Parent: GMModelElementList
+Profile: GMSundhedsplejerskeObs
+Id: GMSundhedsplejerskeObs
+Parent: GMModelElement
 // code for the model element
-* code.coding.code = #Sundhedsplejerske // todo find en passende kode eller modeller som noget andet
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMSundhedsplejerskeAnsatVedOrganization)
-
-// Der er et navn i CDA modellen men ikke i den logiske model. Hvis det skal med, så aktiver her og indsæt i GMSundhedsplejerskeList
-//Profile: GMSundhedsplejerskeObs
-//Id: GMSundhedsplejerskeObs
-//Parent: GMBaseObservation
-// code of child component
-//* code.coding.code = #Sundhedsplejerske // todo find en passende kode eller modeller som noget andet
-// type of child component
-//* value[x] only string
+* code.coding.code = #Sundhedsplejerske
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..0
+// child model elements
+* extension[GMModelElementReference] contains
+    SundhedsplejerskeAnsatVed 0..1
+* extension[GMModelElementReference][SundhedsplejerskeAnsatVed].valueReference only Reference(GMSundhedsplejerskeAnsatVedOrganization)
 
 
 Profile: GMSundhedsplejenUdpegerOrganization

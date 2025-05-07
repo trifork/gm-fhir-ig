@@ -1,36 +1,39 @@
-Profile: GMNikotinList
-Id: GMNikotinList
-Parent: GMModelElementList
+Profile: GMNikotinObs
+Id: GMNikotinObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #647981000005104
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMAndetNikotinforbrugFoerGraviditetObs or GMBrugerNikotinproduktUnderGraviditetObs or GMDatoOphoerAndetNikotinproduktObs or GMAndetNikotinproduktList)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..3
+* component contains
+    andet-nikotinforbrug-før-graviditet 0..1 and
+    bruger-nikotinprodukt-under-graviditet 0..1 and
+    dato-ophør-andet-nikotinprodukt 0..1
 
-
-Profile: GMAndetNikotinforbrugFoerGraviditetObs
-Id: GMAndetNikotinforbrugFoerGraviditetObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598091000005102
+* component[andet-nikotinforbrug-før-graviditet].code.coding.code = #598091000005102
 // type of child component
-* value[x] only boolean
+* component[andet-nikotinforbrug-før-graviditet].value[x] only boolean
 
-
-Profile: GMBrugerNikotinproduktUnderGraviditetObs
-Id: GMBrugerNikotinproduktUnderGraviditetObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598221000005106
+* component[bruger-nikotinprodukt-under-graviditet].code.coding.code = #598221000005106
 // type of child component
-* value[x] only boolean
+* component[bruger-nikotinprodukt-under-graviditet].value[x] only boolean
 
-
-Profile: GMDatoOphoerAndetNikotinproduktObs
-Id: GMDatoOphoerAndetNikotinproduktObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598261000005102
+* component[dato-ophør-andet-nikotinprodukt].code.coding.code = #598261000005102
 // type of child component
-* value[x] only dateTime
+* component[dato-ophør-andet-nikotinprodukt].value[x] only dateTime
 
+* extension[GMModelElementReference] 0..1
+// child model elements
+* extension[GMModelElementReference] contains
+    AndetNikotinprodukt 0..1
+
+* extension[GMModelElementReference][AndetNikotinprodukt].valueReference only Reference(GMAndetNikotinproduktObs)

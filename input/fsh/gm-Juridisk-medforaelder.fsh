@@ -1,27 +1,28 @@
-Profile: GMJuridiskMedforaelderList
-Id: GMJuridiskMedforaelderList
-Parent: GMModelElementList
+Profile: GMJuridiskMedforaelderObs
+Id: GMJuridiskMedforaelderObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #9306000
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMCprObs or GMJuridiskMedforaelderNavnObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..2
+* component contains
+    cpr 0..1 and
+    navn 0..1
 
-
-Profile: GMCprObs
-Id: GMCprObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #567901000005107
+* component[cpr].code.coding.code = #567901000005107
 // type of child component
-* value[x] only string
+* component[cpr].value[x] only string
 
-
-Profile: GMJuridiskMedforaelderNavnObs
-Id: GMJuridiskMedforaelderNavnObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #703503000
+* component[navn].code.coding.code = #703503000
 // type of child component
-* value[x] only string
+* component[navn].value[x] only string
 
+* extension[GMModelElementReference] 0..0

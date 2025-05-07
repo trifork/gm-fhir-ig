@@ -1,36 +1,34 @@
-Profile: GMTidligereAbortList
-Id: GMTidligereAbortList
-Parent: GMModelElementList
+Profile: GMTidligereAbortObs
+Id: GMTidligereAbortObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #713651007
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMAborttypeObs or GMTidligereAbortAarstalObs or GMGraviditetsugeObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..3
+* component contains
+    aborttype 0..1 and
+    årstal 0..1 and
+    graviditetsuge 0..1
 
-
-Profile: GMAborttypeObs
-Id: GMAborttypeObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #597931000005103
+* component[aborttype].code.coding.code = #597931000005103
 // type of child component
-* value[x] only string
+* component[aborttype].value[x] only string
 
-
-Profile: GMTidligereAbortAarstalObs
-Id: GMTidligereAbortAarstalObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #277267003
+* component[årstal].code.coding.code = #277267003
 // type of child component
-* value[x] only integer
+* component[årstal].value[x] only integer
 
-
-Profile: GMGraviditetsugeObs
-Id: GMGraviditetsugeObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598141000005108
+* component[graviditetsuge].code.coding.code = #598141000005108
 // type of child component
-* value[x] only integer
+* component[graviditetsuge].value[x] only integer
 
+* extension[GMModelElementReference] 0..0

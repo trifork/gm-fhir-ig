@@ -1,36 +1,34 @@
-Profile: GMFravaersmeldingSygemeldingList
-Id: GMFravaersmeldingSygemeldingList
-Parent: GMModelElementList
+Profile: GMFravaersmeldingSygemeldingObs
+Id: GMFravaersmeldingSygemeldingObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #224362002
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMAndreBemaerkningerObs or GMFravaersmeldtObs or GMSygemeldingObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..3
+* component contains
+    andre-bemærkninger 0..1 and
+    fraværsmeldt 0..1 and
+    sygemelding 0..1
 
-
-Profile: GMAndreBemaerkningerObs
-Id: GMAndreBemaerkningerObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #398005008
+* component[andre-bemærkninger].code.coding.code = #398005008
 // type of child component
-* value[x] only string
+* component[andre-bemærkninger].value[x] only string
 
-
-Profile: GMFravaersmeldtObs
-Id: GMFravaersmeldtObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #224399002
+* component[fraværsmeldt].code.coding.code = #224399002
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-fravaersmelding
-
-Profile: GMSygemeldingObs
-Id: GMSygemeldingObs
-Parent: GMBaseObservation
+* component[fraværsmeldt].value[x] only CodeableConcept
+* component[fraværsmeldt].valueCodeableConcept from VS-fravaersmelding
 // code of child component
-* code.coding.code = #224459001
+* component[sygemelding].code.coding.code = #224459001
 // type of child component
-* value[x] only boolean
+* component[sygemelding].value[x] only boolean
 
+* extension[GMModelElementReference] 0..0

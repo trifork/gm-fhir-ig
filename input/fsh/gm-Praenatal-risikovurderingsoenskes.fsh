@@ -1,18 +1,22 @@
-Profile: GMPraenatalRisikovurderingsoenskesList
-Id: GMPraenatalRisikovurderingsoenskesList
-Parent: GMModelElementList
+Profile: GMPraenatalRisikovurderingsoenskesObs
+Id: GMPraenatalRisikovurderingsoenskesObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #568011000005108
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMOenskeOmRisikovurderingObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    ønske-om-risikovurdering 0..1
 
-
-Profile: GMOenskeOmRisikovurderingObs
-Id: GMOenskeOmRisikovurderingObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #568011000005108
+* component[ønske-om-risikovurdering].code.coding.code = #568011000005108
 // type of child component
-* value[x] only boolean
+* component[ønske-om-risikovurdering].value[x] only boolean
 
+* extension[GMModelElementReference] 0..0

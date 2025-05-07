@@ -1,18 +1,10 @@
 Profile: GMErytrocytterMeasurementObs
 Id: GMErytrocytterMeasurementObs
-Parent: GMBaseObservation
+Parent: GMIntervalObservation
 // code of child component
 * code.coding.code = #648131000005102
 // type of value
-* value[x] only Quantity
-* valueQuantity.id 0..0
-* valueQuantity.extension 0..0
-* valueQuantity.value 1..1
-* valueQuantity.unit 1..1
-* valueQuantity.unit = "10*6/l"
-* valueQuantity.comparator 0..0
-* valueQuantity.system 1..1
-* valueQuantity.system = $sct
-* valueQuantity.code 1..1
-* valueQuantity.code = #277289004
-
+* extension[GMQuantityInterval].extension[low].value[x].unit = "10^6/l"
+* extension[GMQuantityInterval].extension[low].value[x].code = #277289004
+* extension[GMQuantityInterval].extension[high].value[x].unit = "10^6/l"
+* extension[GMQuantityInterval].extension[high].value[x].code = #277289004

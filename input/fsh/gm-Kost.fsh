@@ -1,18 +1,22 @@
-Profile: GMKostList
-Id: GMKostList
-Parent: GMModelElementList
+Profile: GMKostObs
+Id: GMKostObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #364393001
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMBemaerkningerVedrKostObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    bemærkninger-vedr-kost 0..1
 
-
-Profile: GMBemaerkningerVedrKostObs
-Id: GMBemaerkningerVedrKostObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #364393001
+* component[bemærkninger-vedr-kost].code.coding.code = #364393001
 // type of child component
-* value[x] only string
+* component[bemærkninger-vedr-kost].value[x] only string
 
+* extension[GMModelElementReference] 0..0

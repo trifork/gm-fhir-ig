@@ -1,18 +1,22 @@
-Profile: GMBemaerkningerVaccList
-Id: GMBemaerkningerVaccList
-Parent: GMModelElementList
+Profile: GMBemaerkningerVaccObs
+Id: GMBemaerkningerVaccObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #129019007
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMBemaerkningerFravalgAfVaccinerObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    bemærkninger-fravalg-af-vacciner 0..1
 
-
-Profile: GMBemaerkningerFravalgAfVaccinerObs
-Id: GMBemaerkningerFravalgAfVaccinerObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #429684009
+* component[bemærkninger-fravalg-af-vacciner].code.coding.code = #429684009
 // type of child component
-* value[x] only string
+* component[bemærkninger-fravalg-af-vacciner].value[x] only string
 
+* extension[GMModelElementReference] 0..0

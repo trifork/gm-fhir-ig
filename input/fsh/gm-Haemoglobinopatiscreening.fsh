@@ -1,27 +1,28 @@
-Profile: GMHaemoglobinopatiscreeningList
-Id: GMHaemoglobinopatiscreeningList
-Parent: GMModelElementList
+Profile: GMHaemoglobinopatiscreeningObs
+Id: GMHaemoglobinopatiscreeningObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #395059005
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMAktualitetObs or GMResultatTypeObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..2
+* component contains
+    aktualitet 0..1 and
+    resultat-type 0..1
 
-
-Profile: GMAktualitetObs
-Id: GMAktualitetObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #364713004
+* component[aktualitet].code.coding.code = #364713004
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-screening-aktualitet
-
-Profile: GMResultatTypeObs
-Id: GMResultatTypeObs
-Parent: GMBaseObservation
+* component[aktualitet].value[x] only CodeableConcept
+* component[aktualitet].valueCodeableConcept from VS-screening-aktualitet
 // code of child component
-* code.coding.code = #364711002
+* component[resultat-type].code.coding.code = #364711002
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-resultat-type
+* component[resultat-type].value[x] only CodeableConcept
+* component[resultat-type].valueCodeableConcept from VS-resultat-type
+* extension[GMModelElementReference] 0..0

@@ -1,81 +1,73 @@
-Profile: GMTidligereFoedselList
-Id: GMTidligereFoedselList
-Parent: GMModelElementList
+Profile: GMTidligereFoedselObs
+Id: GMTidligereFoedselObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #364319003
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMOplysningerBarselskompObs or GMTidligereFoedselAarstalObs or GMGestitationsalderObs or GMFoedestedObs or GMFoedselsoplevelseObs or GMBemaerkningerGraviditetsforloebObs or GMBemaerkningFoedselsforloebObs or GMUkompliceretBarselsforloebObs or GMBarnList or GMFoedselsforloebstraekList or GMGraviditetsforloebstraekList)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..8
+* component contains
+    oplysninger-barselskomp 0..1 and
+    årstal 0..1 and
+    gestitationsalder 0..1 and
+    fødested 0..1 and
+    fødselsoplevelse 0..1 and
+    bemærkninger-graviditetsforløb 0..1 and
+    bemærkning-fødselsforløb 0..1 and
+    ukompliceret-barselsforløb 0..1
 
-
-Profile: GMOplysningerBarselskompObs
-Id: GMOplysningerBarselskompObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #249197004
+* component[oplysninger-barselskomp].code.coding.code = #249197004
 // type of child component
-* value[x] only string
+* component[oplysninger-barselskomp].value[x] only string
 
-
-Profile: GMTidligereFoedselAarstalObs
-Id: GMTidligereFoedselAarstalObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #277267003
+* component[årstal].code.coding.code = #277267003
 // type of child component
-* value[x] only integer
+* component[årstal].value[x] only integer
 
-
-Profile: GMGestitationsalderObs
-Id: GMGestitationsalderObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598151000005105
+* component[gestitationsalder].code.coding.code = #598151000005105
 // type of child component
-* value[x] only integer
+* component[gestitationsalder].value[x] only integer
 
-
-Profile: GMFoedestedObs
-Id: GMFoedestedObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #169812000
+* component[fødested].code.coding.code = #169812000
 // type of child component
-* value[x] only string
+* component[fødested].value[x] only string
 
-
-Profile: GMFoedselsoplevelseObs
-Id: GMFoedselsoplevelseObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598271000005107
+* component[fødselsoplevelse].code.coding.code = #598271000005107
 // type of child component
-* value[x] only string
+* component[fødselsoplevelse].value[x] only string
 
-
-Profile: GMBemaerkningerGraviditetsforloebObs
-Id: GMBemaerkningerGraviditetsforloebObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #398005008
+* component[bemærkninger-graviditetsforløb].code.coding.code = #398005008
 // type of child component
-* value[x] only string
+* component[bemærkninger-graviditetsforløb].value[x] only string
 
-
-Profile: GMBemaerkningFoedselsforloebObs
-Id: GMBemaerkningFoedselsforloebObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #398005008
+* component[bemærkning-fødselsforløb].code.coding.code = #398005008
 // type of child component
-* value[x] only string
+* component[bemærkning-fødselsforløb].value[x] only string
 
-
-Profile: GMUkompliceretBarselsforloebObs
-Id: GMUkompliceretBarselsforloebObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #597961000005105
+* component[ukompliceret-barselsforløb].code.coding.code = #597961000005105
 // type of child component
-* value[x] only boolean
+* component[ukompliceret-barselsforløb].value[x] only boolean
 
+* extension[GMModelElementReference] 0..3
+// child model elements
+* extension[GMModelElementReference] contains
+    Barn 0..1 and
+    Fødselsforløbstræk 0..1 and
+    Graviditetsforløbstræk 0..1
+
+* extension[GMModelElementReference][Barn].valueReference only Reference(GMBarnObs)
+* extension[GMModelElementReference][Fødselsforløbstræk].valueReference only Reference(GMFoedselsforloebstraekObs)
+* extension[GMModelElementReference][Graviditetsforløbstræk].valueReference only Reference(GMGraviditetsforloebstraekObs)

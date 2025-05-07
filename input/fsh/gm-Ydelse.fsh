@@ -1,18 +1,22 @@
-Profile: GMYdelseList
-Id: GMYdelseList
-Parent: GMModelElementList
+Profile: GMYdelseObs
+Id: GMYdelseObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #228163007
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMYdelsestypeObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    ydelsestype 0..1
 
-
-Profile: GMYdelsestypeObs
-Id: GMYdelsestypeObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #228163007
+* component[ydelsestype].code.coding.code = #228163007
 // type of child component
-* value[x] only string
+* component[ydelsestype].value[x] only string
 
+* extension[GMModelElementReference] 0..0

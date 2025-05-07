@@ -1,54 +1,46 @@
-Profile: GMTerminsberegningList
-Id: GMTerminsberegningList
-Parent: GMModelElementList
+Profile: GMTerminsberegningObs
+Id: GMTerminsberegningObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #161714006
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMSidsteMens1dagObs or GMDageCyklusObs or GMNaegelesTerminObs or GMTerminsberegningSikkerhedObs or GMBemaerkningObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..5
+* component contains
+    sidste-mens1dag 0..1 and
+    dage-cyklus 0..1 and
+    naegeles-termin 0..1 and
+    terminsberegning-sikkerhed 0..1 and
+    bemærkning 0..1
 
-
-Profile: GMSidsteMens1dagObs
-Id: GMSidsteMens1dagObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #161713000
+* component[sidste-mens1dag].code.coding.code = #161713000
 // type of child component
-* value[x] only dateTime
+* component[sidste-mens1dag].value[x] only dateTime
 
-
-Profile: GMDageCyklusObs
-Id: GMDageCyklusObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #364310004
+* component[dage-cyklus].code.coding.code = #364310004
 // type of child component
-* value[x] only string
+* component[dage-cyklus].value[x] only string
 
-
-Profile: GMNaegelesTerminObs
-Id: GMNaegelesTerminObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #289206005
+* component[naegeles-termin].code.coding.code = #289206005
 // type of child component
-* value[x] only dateTime
+* component[naegeles-termin].value[x] only dateTime
 
-
-Profile: GMTerminsberegningSikkerhedObs
-Id: GMTerminsberegningSikkerhedObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #567941000005109
+* component[terminsberegning-sikkerhed].code.coding.code = #567941000005109
 // type of child component
-* value[x] only boolean
+* component[terminsberegning-sikkerhed].value[x] only boolean
 
-
-Profile: GMBemaerkningObs
-Id: GMBemaerkningObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #398005008
+* component[bemærkning].code.coding.code = #398005008
 // type of child component
-* value[x] only string
+* component[bemærkning].value[x] only string
 
+* extension[GMModelElementReference] 0..0

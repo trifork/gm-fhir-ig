@@ -1,63 +1,52 @@
-Profile: GMBarnList
-Id: GMBarnList
-Parent: GMModelElementList
+Profile: GMBarnObs
+Id: GMBarnObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #224117009
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMBarnetsNuvaerendeTilstandObs or GMBarsKomplikationObs or GMDoedEfterFoedselObs or GMFoedselsudfaldObs or GMFoedselsvaegtObs or GMKoenObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..6
+* component contains
+    barnets-nuværende-tilstand 0..1 and
+    bars-komplikation 0..1 and
+    død-efter-fødsel 0..1 and
+    fødselsudfald 0..1 and
+    fødselsvægt 0..1 and
+    køn 0..1
 
-
-Profile: GMBarnetsNuvaerendeTilstandObs
-Id: GMBarnetsNuvaerendeTilstandObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #617951000005104
+* component[barnets-nuværende-tilstand].code.coding.code = #617951000005104
 // type of child component
-* value[x] only string
+* component[barnets-nuværende-tilstand].value[x] only string
 
-
-Profile: GMBarsKomplikationObs
-Id: GMBarsKomplikationObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #249222005
+* component[bars-komplikation].code.coding.code = #249222005
 // type of child component
-* value[x] only string
+* component[bars-komplikation].value[x] only string
 
-
-Profile: GMDoedEfterFoedselObs
-Id: GMDoedEfterFoedselObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598121000005103
+* component[død-efter-fødsel].code.coding.code = #598121000005103
 // type of child component
-* value[x] only boolean
+* component[død-efter-fødsel].value[x] only boolean
 
-
-Profile: GMFoedselsudfaldObs
-Id: GMFoedselsudfaldObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #364587008
+* component[fødselsudfald].code.coding.code = #364587008
 // type of child component
-* value[x] only boolean
+* component[fødselsudfald].value[x] only boolean
 
-
-Profile: GMFoedselsvaegtObs
-Id: GMFoedselsvaegtObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #364589006
+* component[fødselsvægt].code.coding.code = #364589006
 // type of child component
-* value[x] only Quantity
+* component[fødselsvægt].value[x] only Quantity
 
-
-Profile: GMKoenObs
-Id: GMKoenObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #263495000
+* component[køn].code.coding.code = #263495000
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-barns-koen
+* component[køn].value[x] only CodeableConcept
+* component[køn].valueCodeableConcept from VS-barns-koen
+* extension[GMModelElementReference] 0..0

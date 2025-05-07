@@ -1,45 +1,40 @@
-Profile: GMFertilitetsbehandlingList
-Id: GMFertilitetsbehandlingList
-Parent: GMModelElementList
-// code for the model element
-* code.coding.code = #55767001
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMFertilitetsbehandlingObs or GMFertilitetsbehandlingstypeObs or GMBemaerkningerObs or GMLangvarigtUhonoreretGraviditetsoenskeObs)
-
-
 Profile: GMFertilitetsbehandlingObs
 Id: GMFertilitetsbehandlingObs
-Parent: GMBaseObservation
+Parent: GMModelElement
+
+// code for the model element
+* code.coding.code = #55767001
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..4
+* component contains
+    fertilitetsbehandling 0..1 and
+    fertilitetsbehandlingstype 0..1 and
+    bemærkninger 0..1 and
+    langvarigt-uhonoreret-graviditetsønske 0..1
+
 // code of child component
-* code.coding.code = #773261007
+* component[fertilitetsbehandling].code.coding.code = #773261007
 // type of child component
-* value[x] only boolean
+* component[fertilitetsbehandling].value[x] only boolean
 
-
-Profile: GMFertilitetsbehandlingstypeObs
-Id: GMFertilitetsbehandlingstypeObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #63487001
+* component[fertilitetsbehandlingstype].code.coding.code = #63487001
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-fertilitetsbehandlingstype
-
-Profile: GMBemaerkningerObs
-Id: GMBemaerkningerObs
-Parent: GMBaseObservation
+* component[fertilitetsbehandlingstype].value[x] only CodeableConcept
+* component[fertilitetsbehandlingstype].valueCodeableConcept from VS-fertilitetsbehandlingstype
 // code of child component
-* code.coding.code = #398005008
+* component[bemærkninger].code.coding.code = #398005008
 // type of child component
-* value[x] only string
+* component[bemærkninger].value[x] only string
 
-
-Profile: GMLangvarigtUhonoreretGraviditetsoenskeObs
-Id: GMLangvarigtUhonoreretGraviditetsoenskeObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #169589005
+* component[langvarigt-uhonoreret-graviditetsønske].code.coding.code = #169589005
 // type of child component
-* value[x] only boolean
+* component[langvarigt-uhonoreret-graviditetsønske].value[x] only boolean
 
+* extension[GMModelElementReference] 0..0

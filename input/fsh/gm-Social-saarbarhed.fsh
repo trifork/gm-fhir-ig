@@ -1,18 +1,22 @@
-Profile: GMSocialSaarbarhedList
-Id: GMSocialSaarbarhedList
-Parent: GMModelElementList
+Profile: GMSocialSaarbarhedObs
+Id: GMSocialSaarbarhedObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #699089001
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMSupplerendeOplysningerOmOvergrebOpvaekstObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    supplerende-oplysninger-om-overgreb/opvækst 0..1
 
-
-Profile: GMSupplerendeOplysningerOmOvergrebOpvaekstObs
-Id: GMSupplerendeOplysningerOmOvergrebOpvaekstObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #405200007
+* component[supplerende-oplysninger-om-overgreb/opvækst].code.coding.code = #405200007
 // type of child component
-* value[x] only string
+* component[supplerende-oplysninger-om-overgreb/opvækst].value[x] only string
 
+* extension[GMModelElementReference] 0..0

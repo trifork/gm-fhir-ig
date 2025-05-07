@@ -1,36 +1,34 @@
-Profile: GMFysiskeDataList
-Id: GMFysiskeDataList
-Parent: GMModelElementList
+Profile: GMFysiskeDataObs
+Id: GMFysiskeDataObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #248326004
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMHoejdeObs or GMVaegtGraviditetsBegyndelseObs or GMBmiObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..3
+* component contains
+    højde 0..1 and
+    vægt-graviditets-begyndelse 0..1 and
+    bmi 0..1
 
-
-Profile: GMHoejdeObs
-Id: GMHoejdeObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #248333004
+* component[højde].code.coding.code = #248333004
 // type of child component
-* value[x] only integer
+* component[højde].value[x] only integer
 
-
-Profile: GMVaegtGraviditetsBegyndelseObs
-Id: GMVaegtGraviditetsBegyndelseObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #1162389000
+* component[vægt-graviditets-begyndelse].code.coding.code = #1162389000
 // type of child component
-* value[x] only integer
+* component[vægt-graviditets-begyndelse].value[x] only integer
 
-
-Profile: GMBmiObs
-Id: GMBmiObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #60621009
+* component[bmi].code.coding.code = #60621009
 // type of child component
-* value[x] only Quantity
+* component[bmi].value[x] only Quantity
 
+* extension[GMModelElementReference] 0..0

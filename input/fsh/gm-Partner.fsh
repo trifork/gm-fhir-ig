@@ -1,27 +1,28 @@
-Profile: GMPartnerList
-Id: GMPartnerList
-Parent: GMModelElementList
+Profile: GMPartnerObs
+Id: GMPartnerObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #262043009
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMPartnerNavnObs or GMPartnerrelationObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..2
+* component contains
+    navn 0..1 and
+    partner-relation 0..1
 
-
-Profile: GMPartnerNavnObs
-Id: GMPartnerNavnObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #703503000
+* component[navn].code.coding.code = #703503000
 // type of child component
-* value[x] only string
+* component[navn].value[x] only string
 
-
-Profile: GMPartnerrelationObs
-Id: GMPartnerrelationObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #224083004
+* component[partner-relation].code.coding.code = #224083004
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-partnerrelation
+* component[partner-relation].value[x] only CodeableConcept
+* component[partner-relation].valueCodeableConcept from VS-partnerrelation
+* extension[GMModelElementReference] 0..0

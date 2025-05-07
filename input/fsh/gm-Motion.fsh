@@ -1,18 +1,22 @@
-Profile: GMMotionList
-Id: GMMotionList
-Parent: GMModelElementList
+Profile: GMMotionObs
+Id: GMMotionObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #256235009
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMBemaerkningerVedrMotionObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    bemærkninger-vedr-motion 0..1
 
-
-Profile: GMBemaerkningerVedrMotionObs
-Id: GMBemaerkningerVedrMotionObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #256235009
+* component[bemærkninger-vedr-motion].code.coding.code = #256235009
 // type of child component
-* value[x] only string
+* component[bemærkninger-vedr-motion].value[x] only string
 
+* extension[GMModelElementReference] 0..0

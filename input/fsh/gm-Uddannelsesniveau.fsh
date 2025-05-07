@@ -1,27 +1,28 @@
-Profile: GMUddannelsesniveauList
-Id: GMUddannelsesniveauList
-Parent: GMModelElementList
-// code for the model element
-* code.coding.code = #224285004
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMAndetUddannelsesniveauObs or GMUddannelsesniveauObs)
-
-
-Profile: GMAndetUddannelsesniveauObs
-Id: GMAndetUddannelsesniveauObs
-Parent: GMBaseObservation
-// code of child component
-* code.coding.code = #398005008
-// type of child component
-* value[x] only string
-
-
 Profile: GMUddannelsesniveauObs
 Id: GMUddannelsesniveauObs
-Parent: GMBaseObservation
-// code of child component
-* code.coding.code = #105421008
-// type of child component
-* value[x] only string
+Parent: GMModelElement
 
+// code for the model element
+* code.coding.code = #224285004
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..2
+* component contains
+    andet-uddannelsesniveau 0..1 and
+    uddannelsesniveau 0..1
+
+// code of child component
+* component[andet-uddannelsesniveau].code.coding.code = #398005008
+// type of child component
+* component[andet-uddannelsesniveau].value[x] only string
+
+// code of child component
+* component[uddannelsesniveau].code.coding.code = #105421008
+// type of child component
+* component[uddannelsesniveau].value[x] only string
+
+* extension[GMModelElementReference] 0..0

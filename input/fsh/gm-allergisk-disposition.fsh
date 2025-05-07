@@ -1,18 +1,22 @@
-Profile: GMAllergiskDispositionList
-Id: GMAllergiskDispositionList
-Parent: GMModelElementList
+Profile: GMAllergiskDispositionObs
+Id: GMAllergiskDispositionObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #2903021000005101
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMBarnDisponeretObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    barn-disponeret 0..1
 
-
-Profile: GMBarnDisponeretObs
-Id: GMBarnDisponeretObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #609328004
+* component[barn-disponeret].code.coding.code = #609328004
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-barn-disponeret
+* component[barn-disponeret].value[x] only CodeableConcept
+* component[barn-disponeret].valueCodeableConcept from VS-barn-disponeret
+* extension[GMModelElementReference] 0..0

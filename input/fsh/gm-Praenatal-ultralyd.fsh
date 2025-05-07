@@ -1,27 +1,28 @@
-Profile: GMPraenatalUltralydList
-Id: GMPraenatalUltralydList
-Parent: GMModelElementList
+Profile: GMPraenatalUltralydObs
+Id: GMPraenatalUltralydObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #304602002
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMOenskes1trimesterscanningObs or GMOenskes2trimesterscanningObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..2
+* component contains
+    ønskes1trimesterscanning 0..1 and
+    ønskes2trimesterscanning 0..1
 
-
-Profile: GMOenskes1trimesterscanningObs
-Id: GMOenskes1trimesterscanningObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #567961000005108
+* component[ønskes1trimesterscanning].code.coding.code = #567961000005108
 // type of child component
-* value[x] only boolean
+* component[ønskes1trimesterscanning].value[x] only boolean
 
-
-Profile: GMOenskes2trimesterscanningObs
-Id: GMOenskes2trimesterscanningObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #567981000005100
+* component[ønskes2trimesterscanning].code.coding.code = #567981000005100
 // type of child component
-* value[x] only boolean
+* component[ønskes2trimesterscanning].value[x] only boolean
 
+* extension[GMModelElementReference] 0..0

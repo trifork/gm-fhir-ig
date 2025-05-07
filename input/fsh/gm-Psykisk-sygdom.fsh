@@ -1,27 +1,28 @@
-Profile: GMPsykiskSygdomList
-Id: GMPsykiskSygdomList
-Parent: GMModelElementList
+Profile: GMPsykiskSygdomObs
+Id: GMPsykiskSygdomObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #161464003
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMBehandlingModtagetObs or GMOplysningerPsykiskObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..2
+* component contains
+    behandling-modtaget 0..1 and
+    oplysninger-psykisk 0..1
 
-
-Profile: GMBehandlingModtagetObs
-Id: GMBehandlingModtagetObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #443938003
+* component[behandling-modtaget].code.coding.code = #443938003
 // type of child component
-* value[x] only boolean
+* component[behandling-modtaget].value[x] only boolean
 
-
-Profile: GMOplysningerPsykiskObs
-Id: GMOplysningerPsykiskObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #247571009
+* component[oplysninger-psykisk].code.coding.code = #247571009
 // type of child component
-* value[x] only string
+* component[oplysninger-psykisk].value[x] only string
 
+* extension[GMModelElementReference] 0..0

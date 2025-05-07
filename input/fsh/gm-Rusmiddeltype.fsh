@@ -1,18 +1,22 @@
-Profile: GMRusmiddeltypeList
-Id: GMRusmiddeltypeList
-Parent: GMModelElementList
+Profile: GMRusmiddeltypeObs
+Id: GMRusmiddeltypeObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #373063009
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMTypeRusmiddelLaegemiddelObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    type-rusmiddel/lægemiddel 0..1
 
-
-Profile: GMTypeRusmiddelLaegemiddelObs
-Id: GMTypeRusmiddelLaegemiddelObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #373063009
+* component[type-rusmiddel/lægemiddel].code.coding.code = #373063009
 // type of child component
-* value[x] only string
+* component[type-rusmiddel/lægemiddel].value[x] only string
 
+* extension[GMModelElementReference] 0..0

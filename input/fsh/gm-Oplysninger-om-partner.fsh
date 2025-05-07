@@ -1,72 +1,58 @@
-Profile: GMOplysningerOmPartnerList
-Id: GMOplysningerOmPartnerList
-Parent: GMModelElementList
+Profile: GMOplysningerOmPartnerObs
+Id: GMOplysningerOmPartnerObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #648091000005104
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMAlkoholMisbrugObs or GMAndreOplysningerObs or GMPartnersErhvervsmaessigTilknytningObs or GMRusmiddelMisbrugObs or GMSocialeUdfordringerObs or GMUdfordringerMentaltHelbredObs or GMUdfordringerFysiskHelbredObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..7
+* component contains
+    alkohol-misbrug 0..1 and
+    andre-oplysninger 0..1 and
+    erhvervsmæssig-tilknytning 0..1 and
+    rusmiddel-misbrug 0..1 and
+    sociale-udfordringer 0..1 and
+    udfordringer-mentalt-helbred 0..1 and
+    udfordringer-fysisk-helbred 0..1
 
-
-Profile: GMAlkoholMisbrugObs
-Id: GMAlkoholMisbrugObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #648041000005106
+* component[alkohol-misbrug].code.coding.code = #648041000005106
 // type of child component
-* value[x] only boolean
+* component[alkohol-misbrug].value[x] only boolean
 
-
-Profile: GMAndreOplysningerObs
-Id: GMAndreOplysningerObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #398005008
+* component[andre-oplysninger].code.coding.code = #398005008
 // type of child component
-* value[x] only string
+* component[andre-oplysninger].value[x] only string
 
-
-Profile: GMPartnersErhvervsmaessigTilknytningObs
-Id: GMPartnersErhvervsmaessigTilknytningObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #1252646008
+* component[erhvervsmæssig-tilknytning].code.coding.code = #1252646008
 // type of child component
-* value[x] only string
+* component[erhvervsmæssig-tilknytning].value[x] only string
 
-
-Profile: GMRusmiddelMisbrugObs
-Id: GMRusmiddelMisbrugObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #608031000005108
+* component[rusmiddel-misbrug].code.coding.code = #608031000005108
 // type of child component
-* value[x] only boolean
+* component[rusmiddel-misbrug].value[x] only boolean
 
-
-Profile: GMSocialeUdfordringerObs
-Id: GMSocialeUdfordringerObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #608041000005100
+* component[sociale-udfordringer].code.coding.code = #608041000005100
 // type of child component
-* value[x] only boolean
+* component[sociale-udfordringer].value[x] only boolean
 
-
-Profile: GMUdfordringerMentaltHelbredObs
-Id: GMUdfordringerMentaltHelbredObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #608011000005104
+* component[udfordringer-mentalt-helbred].code.coding.code = #608011000005104
 // type of child component
-* value[x] only boolean
+* component[udfordringer-mentalt-helbred].value[x] only boolean
 
-
-Profile: GMUdfordringerFysiskHelbredObs
-Id: GMUdfordringerFysiskHelbredObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #608001000005102
+* component[udfordringer-fysisk-helbred].code.coding.code = #608001000005102
 // type of child component
-* value[x] only boolean
+* component[udfordringer-fysisk-helbred].value[x] only boolean
 
+* extension[GMModelElementReference] 0..0

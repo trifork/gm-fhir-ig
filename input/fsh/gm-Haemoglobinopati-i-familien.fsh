@@ -1,18 +1,22 @@
-Profile: GMHaemoglobinopatiIFamilienList
-Id: GMHaemoglobinopatiIFamilienList
-Parent: GMModelElementList
+Profile: GMHaemoglobinopatiIFamilienObs
+Id: GMHaemoglobinopatiIFamilienObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #64501000119109
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMAnlaegsbaererObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..1
+* component contains
+    anlægsbærer 0..1
 
-
-Profile: GMAnlaegsbaererObs
-Id: GMAnlaegsbaererObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #647991000005101
+* component[anlægsbærer].code.coding.code = #647991000005101
 // type of child component
-* value[x] only CodeableConcept
-* valueCodeableConcept from VS-foraelder-anlaegsbaerer
+* component[anlægsbærer].value[x] only CodeableConcept
+* component[anlægsbærer].valueCodeableConcept from VS-foraelder-anlaegsbaerer
+* extension[GMModelElementReference] 0..0

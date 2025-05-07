@@ -1,63 +1,52 @@
-Profile: GMTobakList
-Id: GMTobakList
-Parent: GMModelElementList
+Profile: GMTobakObs
+Id: GMTobakObs
+Parent: GMModelElement
+
 // code for the model element
 * code.coding.code = #229819007
-* entry 0..*
-* entry ^short = "0..1 of each reference"
-* entry.item only Reference(GMHenvistTobaksOgNikotinstopObs or GMPassivRygningIHjemmetObs or GMPassivRygningPaaarbejdspladsenObs or GMRygningFoerGraviditetObs or GMRygningUnderGraviditetObs or GMDatoRygeophoerObs)
+// slicing rules
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.ordered = false
+* component ^slicing.rules = #open
+// how many child components
+* component 0..6
+* component contains
+    henvist-tobaks-og-nikotinstop 0..1 and
+    passiv-rygning-i-hjemmet 0..1 and
+    passiv-rygning-påarbejdspladsen 0..1 and
+    rygning-før-graviditet 0..1 and
+    rygning-under-graviditet 0..1 and
+    dato-rygeophør 0..1
 
-
-Profile: GMHenvistTobaksOgNikotinstopObs
-Id: GMHenvistTobaksOgNikotinstopObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #315232003
+* component[henvist-tobaks-og-nikotinstop].code.coding.code = #315232003
 // type of child component
-* value[x] only string
+* component[henvist-tobaks-og-nikotinstop].value[x] only string
 
-
-Profile: GMPassivRygningIHjemmetObs
-Id: GMPassivRygningIHjemmetObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #228524006
+* component[passiv-rygning-i-hjemmet].code.coding.code = #228524006
 // type of child component
-* value[x] only boolean
+* component[passiv-rygning-i-hjemmet].value[x] only boolean
 
-
-Profile: GMPassivRygningPaaarbejdspladsenObs
-Id: GMPassivRygningPaaarbejdspladsenObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #228523000
+* component[passiv-rygning-påarbejdspladsen].code.coding.code = #228523000
 // type of child component
-* value[x] only boolean
+* component[passiv-rygning-påarbejdspladsen].value[x] only boolean
 
-
-Profile: GMRygningFoerGraviditetObs
-Id: GMRygningFoerGraviditetObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #449345000
+* component[rygning-før-graviditet].code.coding.code = #449345000
 // type of child component
-* value[x] only boolean
+* component[rygning-før-graviditet].value[x] only boolean
 
-
-Profile: GMRygningUnderGraviditetObs
-Id: GMRygningUnderGraviditetObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #598171000005102
+* component[rygning-under-graviditet].code.coding.code = #598171000005102
 // type of child component
-* value[x] only string
+* component[rygning-under-graviditet].value[x] only string
 
-
-Profile: GMDatoRygeophoerObs
-Id: GMDatoRygeophoerObs
-Parent: GMBaseObservation
 // code of child component
-* code.coding.code = #160625004
+* component[dato-rygeophør].code.coding.code = #160625004
 // type of child component
-* value[x] only dateTime
+* component[dato-rygeophør].value[x] only dateTime
 
+* extension[GMModelElementReference] 0..0

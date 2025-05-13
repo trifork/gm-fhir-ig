@@ -22,8 +22,8 @@ Parent: GMModelElement
 // code of child component
 * component[henvist-tobaks-og-nikotinstop].code.coding.code = #315232003
 // type of child component
-* component[henvist-tobaks-og-nikotinstop].value[x] only string
-
+* component[henvist-tobaks-og-nikotinstop].value[x] only CodeableConcept
+* component[henvist-tobaks-og-nikotinstop].valueCodeableConcept from VS-henvist-til-tobaks-og-nikotinstop
 // code of child component
 * component[passiv-rygning-i-hjemmet].code.coding.code = #228524006
 // type of child component
@@ -42,8 +42,8 @@ Parent: GMModelElement
 // code of child component
 * component[rygning-under-graviditet].code.coding.code = #598171000005102
 // type of child component
-* component[rygning-under-graviditet].value[x] only string
-
+* component[rygning-under-graviditet].value[x] only CodeableConcept
+* component[rygning-under-graviditet].valueCodeableConcept from VS-tobaksrygning-under-graviditet
 // code of child component
 * component[dato-rygeophør].code.coding.code = #160625004
 // type of child component

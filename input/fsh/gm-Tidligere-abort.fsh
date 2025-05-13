@@ -19,8 +19,8 @@ Parent: GMModelElement
 // code of child component
 * component[aborttype].code.coding.code = #597931000005103
 // type of child component
-* component[aborttype].value[x] only string
-
+* component[aborttype].value[x] only CodeableConcept
+* component[aborttype].valueCodeableConcept from VS-Aborttype
 // code of child component
 * component[årstal].code.coding.code = #277267003
 // type of child component

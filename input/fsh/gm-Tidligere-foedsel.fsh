@@ -44,8 +44,8 @@ Parent: GMModelElement
 // code of child component
 * component[fødselsoplevelse].code.coding.code = #598271000005107
 // type of child component
-* component[fødselsoplevelse].value[x] only string
-
+* component[fødselsoplevelse].value[x] only CodeableConcept
+* component[fødselsoplevelse].valueCodeableConcept from VS-foedselsoplevelse
 // code of child component
 * component[bemærkninger-graviditetsforløb].code.coding.code = #398005008
 // type of child component

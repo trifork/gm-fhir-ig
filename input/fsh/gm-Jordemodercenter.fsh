@@ -20,8 +20,8 @@ Parent: GMModelElement
 // code of child component
 * component[konsultationsform].code.coding.code = #129430004
 // type of child component
-* component[konsultationsform].value[x] only string
-
+* component[konsultationsform].value[x] only CodeableConcept
+* component[konsultationsform].valueCodeableConcept from VS-konsultationsform
 // code of child component
 * component[ønskes-fødselsforberedende-undervisning].code.coding.code = #386235000
 // type of child component
@@ -35,8 +35,8 @@ Parent: GMModelElement
 // code of child component
 * component[ønsket-ugedag-for-konsultationer].code.coding.code = #307144000
 // type of child component
-* component[ønsket-ugedag-for-konsultationer].value[x] only string
-
+* component[ønsket-ugedag-for-konsultationer].value[x] only CodeableConcept
+* component[ønsket-ugedag-for-konsultationer].valueCodeableConcept from VS-oensket-ugedag
 * extension[GMModelElementReference] 0..2
 // child model elements
 * extension[GMModelElementReference] contains

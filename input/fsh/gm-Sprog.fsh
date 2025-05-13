@@ -30,11 +30,11 @@ Parent: GMModelElement
 // code of child component
 * component[oprindelsesland].code.coding.code = #276205001
 // type of child component
-* component[oprindelsesland].value[x] only string
-
+* component[oprindelsesland].value[x] only CodeableConcept
+//* component[oprindelsesland].valueCodeableConcept from VS-iso-3166-1--landekoder-
 // code of child component
 * component[tolkesprog].code.coding.code = #439736001
 // type of child component
-* component[tolkesprog].value[x] only string
-
+* component[tolkesprog].value[x] only CodeableConcept
+//* component[tolkesprog].valueCodeableConcept from VS-iso-639--sprog-
 * extension[GMModelElementReference] 0..0

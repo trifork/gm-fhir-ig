@@ -37,8 +37,8 @@ Parent: GMModelElement
 // code of child component
 * component[fødselsudfald].code.coding.code = #364587008
 // type of child component
-* component[fødselsudfald].value[x] only boolean
-
+* component[fødselsudfald].value[x] only CodeableConcept
+* component[fødselsudfald].valueCodeableConcept from VS-foedselsudfald
 // code of child component
 * component[fødselsvægt].code.coding.code = #364589006
 // type of child component

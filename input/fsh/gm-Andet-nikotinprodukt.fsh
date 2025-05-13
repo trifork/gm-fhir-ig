@@ -37,8 +37,8 @@ Parent: GMModelElement
 // code of child component
 * component[vandpibeforbrug].code.coding.code = #722495000
 // type of child component
-* component[vandpibeforbrug].value[x] only boolean
-
+* component[vandpibeforbrug].value[x] only CodeableConcept
+* component[vandpibeforbrug].valueCodeableConcept from VS-vandpibe-dagligt-lejlighedsvist
 // code of child component
 * component[nikotinposer-antal/dag].code.coding.code = #258950000
 // type of child component

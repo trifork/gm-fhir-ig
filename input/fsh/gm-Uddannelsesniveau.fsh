@@ -23,6 +23,6 @@ Parent: GMModelElement
 // code of child component
 * component[uddannelsesniveau].code.coding.code = #105421008
 // type of child component
-* component[uddannelsesniveau].value[x] only string
-
+* component[uddannelsesniveau].value[x] only CodeableConcept
+* component[uddannelsesniveau].valueCodeableConcept from VS-uddannelsesniveau
 * extension[GMModelElementReference] 0..0

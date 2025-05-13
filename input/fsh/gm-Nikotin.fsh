@@ -24,8 +24,8 @@ Parent: GMModelElement
 // code of child component
 * component[bruger-nikotinprodukt-under-graviditet].code.coding.code = #598221000005106
 // type of child component
-* component[bruger-nikotinprodukt-under-graviditet].value[x] only boolean
-
+* component[bruger-nikotinprodukt-under-graviditet].value[x] only CodeableConcept
+* component[bruger-nikotinprodukt-under-graviditet].valueCodeableConcept from VS-andet-nikotinprodukt-under-gravditet
 // code of child component
 * component[dato-ophør-andet-nikotinprodukt].code.coding.code = #598261000005102
 // type of child component

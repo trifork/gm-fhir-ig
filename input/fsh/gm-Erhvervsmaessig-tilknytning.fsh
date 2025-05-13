@@ -23,6 +23,6 @@ Parent: GMModelElement
 // code of child component
 * component[erhvervsmæssig-tilknytning].code.coding.code = #224362002
 // type of child component
-* component[erhvervsmæssig-tilknytning].value[x] only string
-
+* component[erhvervsmæssig-tilknytning].value[x] only CodeableConcept
+* component[erhvervsmæssig-tilknytning].valueCodeableConcept from VS-erhvervsmaessig-tilknytning
 * extension[GMModelElementReference] 0..0

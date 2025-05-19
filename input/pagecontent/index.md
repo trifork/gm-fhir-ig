@@ -1,6 +1,6 @@
 # gm-fhir-ig
 
-En graviditetsjournal består af 3 forskellige dokumenttyper:
+En graviditetsmappen består af 3 forskellige dokumenttyper:
 
 - [Svangerskabsjournal](StructureDefinition-GMPRFDocumentBundle.html), som typisk indikerer starten af et nyt
   graviditetsforløb efter konsultation hos egen læge

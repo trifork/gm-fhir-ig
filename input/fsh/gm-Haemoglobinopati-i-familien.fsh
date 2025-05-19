@@ -10,9 +10,9 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..1
+* component 1..1
 * component contains
-    anlægsbærer 0..1
+    anlægsbærer 1..1
 
 // code of child component
 * component[anlægsbærer].code.coding.code = #647991000005101

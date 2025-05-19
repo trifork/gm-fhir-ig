@@ -10,12 +10,12 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..5
+* component 1..5
 * component contains
     bemærkninger-genetisk/medfødt-sygdom/tilstand 0..1 and
-    familie-med-arvelig-sygdom/tilstand 0..1 and
+    familie-med-arvelig-sygdom/tilstand 1..1 and
     bemærkninger-medfødte-misdannelser 0..1 and
-    familie-med-medfødte-misdannelser 0..1 and
+    familie-med-medfødte-misdannelser 1..1 and
     indikation-for-henvisning-til-udredning/screening 0..1
 
 // code of child component

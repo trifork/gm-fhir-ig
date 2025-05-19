@@ -50,3 +50,10 @@ Parent: Procedure
 * focalDevice 0..0
 //* used 0..0
 //* supportingInfo 0..0
+* performed[x] only dateTime
+* asserter 0..0
+* reasonCode 0..0
+* reasonReference 0..0
+* complicationDetail 0..0
+* usedReference 0..0
+* usedCode 0..0

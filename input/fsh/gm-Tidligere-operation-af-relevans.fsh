@@ -25,9 +25,9 @@ Parent: GMModelElement
 // type of child component
 * component[tidligere-operation-af-relevans].value[x] only boolean
 
-* extension[GMModelElementReference] 0..1
+* extension[GMModelElementReference] 0..*
 // child model elements
 * extension[GMModelElementReference] contains
-    TidligereRelevantOperation 0..1
+    TidligereRelevantOperation 0..*
 
 * extension[GMModelElementReference][TidligereRelevantOperation].valueReference only Reference(GMTidligereRelevantOperationProcedure)

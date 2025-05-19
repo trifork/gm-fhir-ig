@@ -14,9 +14,9 @@ Parent: GMModelElement
 
 
 
-* extension[GMModelElementReference] 0..1
+* extension[GMModelElementReference] 0..*
 // child model elements
 * extension[GMModelElementReference] contains
-    TidligereFødsel 0..1
+    TidligereFødsel 0..*
 
 * extension[GMModelElementReference][TidligereFødsel].valueReference only Reference(GMTidligereFoedselObs)

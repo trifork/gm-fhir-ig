@@ -61,9 +61,9 @@ Parent: GMModelElement
 // type of child component
 * component[henvist-til-arbejdsmedicinsk-klinik].value[x] only boolean
 
-* extension[GMModelElementReference] 0..1
+* extension[GMModelElementReference] 0..*
 // child model elements
 * extension[GMModelElementReference] contains
-    TypePåvirkning 0..1
+    TypePåvirkning 0..*
 
 * extension[GMModelElementReference][TypePåvirkning].valueReference only Reference(GMTypePaavirkningObs)

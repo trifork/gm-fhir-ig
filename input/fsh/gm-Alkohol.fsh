@@ -49,9 +49,9 @@ Parent: GMModelElement
 // type of child component
 * component[tweak-points].value[x] only integer
 
-* extension[GMModelElementReference] 0..1
+* extension[GMModelElementReference] 0..*
 // child model elements
 * extension[GMModelElementReference] contains
-    GraviditetsugeMed5+Genstande 0..1
+    GraviditetsugeMed5+Genstande 0..*
 
 * extension[GMModelElementReference][GraviditetsugeMed5+Genstande].valueReference only Reference(GMGraviditetsugeMed5GenstandeObs)

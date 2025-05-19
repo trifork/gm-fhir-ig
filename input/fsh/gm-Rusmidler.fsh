@@ -19,9 +19,9 @@ Parent: GMModelElement
 // type of child component
 * component[forbrug2år-før-graviditet].value[x] only boolean
 
-* extension[GMModelElementReference] 0..1
+* extension[GMModelElementReference] 0..*
 // child model elements
 * extension[GMModelElementReference] contains
-    Rusmiddeltype 0..1
+    Rusmiddeltype 0..*
 
 * extension[GMModelElementReference][Rusmiddeltype].valueReference only Reference(GMRusmiddeltypeObs)

@@ -61,12 +61,12 @@ Parent: GMModelElement
 // type of child component
 * component[ukompliceret-barselsforløb].value[x] only boolean
 
-* extension[GMModelElementReference] 0..3
+* extension[GMModelElementReference] 0..*
 // child model elements
 * extension[GMModelElementReference] contains
-    Barn 0..1 and
-    Fødselsforløbstræk 0..1 and
-    Graviditetsforløbstræk 0..1
+    Barn 0..* and
+    Fødselsforløbstræk 0..* and
+    Graviditetsforløbstræk 0..*
 
 * extension[GMModelElementReference][Barn].valueReference only Reference(GMBarnObs)
 * extension[GMModelElementReference][Fødselsforløbstræk].valueReference only Reference(GMFoedselsforloebstraekObs)

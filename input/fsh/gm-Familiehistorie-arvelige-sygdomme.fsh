@@ -43,11 +43,11 @@ Parent: GMModelElement
 // type of child component
 * component[indikation-for-henvisning-til-udredning/screening].value[x] only boolean
 
-* extension[GMModelElementReference] 0..2
+* extension[GMModelElementReference] 0..*
 // child model elements
 * extension[GMModelElementReference] contains
     Hæmoglobinopatiscreening 0..1 and
-    HæmoglobinopatiIFamilien 0..1
+    HæmoglobinopatiIFamilien 0..*
 
 * extension[GMModelElementReference][Hæmoglobinopatiscreening].valueReference only Reference(GMHaemoglobinopatiscreeningObs)
 * extension[GMModelElementReference][HæmoglobinopatiIFamilien].valueReference only Reference(GMHaemoglobinopatiIFamilienObs)

@@ -10,10 +10,10 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..2
+* component 1..2
 * component contains
     operationer-suppl-oplysinger 0..1 and
-    tidligere-operation-af-relevans 0..1
+    tidligere-operation-af-relevans 1..1
 
 // code of child component
 * component[operationer-suppl-oplysinger].code.coding.code = #398005008

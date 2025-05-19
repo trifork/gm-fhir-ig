@@ -10,10 +10,10 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..2
+* component 1..2
 * component contains
     den-gravide-er-allergisk-overfor 0..1 and
-    den-gravide-har-allergi 0..1
+    den-gravide-har-allergi 1..1
 
 // code of child component
 * component[den-gravide-er-allergisk-overfor].code.coding.code = #246075003

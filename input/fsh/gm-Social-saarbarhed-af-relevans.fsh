@@ -10,9 +10,9 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..1
+* component 1..1
 * component contains
-    social-sårbarhed-af-relevans 0..1
+    social-sårbarhed-af-relevans 1..1
 
 // code of child component
 * component[social-sårbarhed-af-relevans].code.coding.code = #365448001

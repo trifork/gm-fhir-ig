@@ -10,9 +10,9 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..1
+* component 1..1
 * component contains
-    type-af-arbejdsmiljøpåvirkning 0..1
+    type-af-arbejdsmiljøpåvirkning 1..1
 
 // code of child component
 * component[type-af-arbejdsmiljøpåvirkning].code.coding.code = #598021000005104

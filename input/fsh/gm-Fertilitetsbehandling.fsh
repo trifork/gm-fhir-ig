@@ -10,9 +10,9 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..4
+* component 1..4
 * component contains
-    fertilitetsbehandling 0..1 and
+    fertilitetsbehandling 1..1 and
     fertilitetsbehandlingstype 0..1 and
     bemærkninger 0..1 and
     langvarigt-uhonoreret-graviditetsønske 0..1

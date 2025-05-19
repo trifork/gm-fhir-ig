@@ -10,10 +10,10 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..2
+* component 1..2
 * component contains
-    screeningstype 0..1 and
-    status 0..1
+    screeningstype 1..1 and
+    status 1..1
 
 // code of child component
 * component[screeningstype].code.coding.code = #243787009

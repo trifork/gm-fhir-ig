@@ -10,10 +10,10 @@ Parent: GMModelElement
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components
-* component 0..2
+* component 1..2
 * component contains
     andre-oplysninger-somatiske-sygdomme 0..1 and
-    somatisk-sygdom 0..1
+    somatisk-sygdom 1..1
 
 // code of child component
 * component[andre-oplysninger-somatiske-sygdomme].code.coding.code = #398005008

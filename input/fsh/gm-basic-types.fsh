@@ -324,29 +324,29 @@ Parent: GMDocumentComposition
 * section.entry ^slicing.ordered = false
 * section.entry ^slicing.rules = #open
 // child components
-* section.entry 1..21
+* section.entry 11..*
 * section.entry contains
     allergisk-disposition 0..1 and
     arbejdsmiljoepaavirkning 0..1 and
     bemaerkninger-vacc 0..1 and
-    familiehistorie-arvelige-sygdomme 1 and
-    fertilitetsbehandling 1 and
+    familiehistorie-arvelige-sygdomme 1..1 and
+    fertilitetsbehandling 1..1 and
     fravaersmelding-sygemelding 0..1 and
-    fysiske-data 1 and
+    fysiske-data 1..1 and
     gravides-allergi 0..1 and
-    konsangvinitet 1 and
+    konsangvinitet 1..1 and
     medicin-og-naturlaegemidler 0..1 and
-    praenatal-risikovurderingsoenskes 1 and
-    praenatal-ultralyd 1 and
-    psykisk-sygdom-af-relevans 1 and
+    praenatal-risikovurderingsoenskes 1..1 and
+    praenatal-ultralyd 1..1 and
+    psykisk-sygdom-af-relevans 1..1 and
     screeningsplanlaegning 0..* and
-    social-saarbarhed-af-relevans 1 and
+    social-saarbarhed-af-relevans 1..1 and
     sociale-forhold 0..1 and
-    somatisk-sygdom 1 and
-    sprog 1 and
+    somatisk-sygdom 1..1 and
+    sprog 1..1 and
     tidligere-abort 0..* and
     tidligere-foedsler 0..1 and
-    tidligere-operation-af-relevans 1
+    tidligere-operation-af-relevans 1..1
 * section.entry[allergisk-disposition] only Reference(GMAllergiskDispositionObs)
 * section.entry[arbejdsmiljoepaavirkning] only Reference(GMArbejdsmiljoepaavirkningObs)
 * section.entry[bemaerkninger-vacc] only Reference(GMBemaerkningerVaccObs)

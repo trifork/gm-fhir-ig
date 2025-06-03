@@ -273,7 +273,6 @@ Parent: Composition
 * implicitRules 0..0
 * language 0..0
 * text 0..0
-* extension 0..0
 * modifierExtension 0..0
 * identifier 0..0
 * status = #final
@@ -312,6 +311,40 @@ Parent: Composition
 * section.orderedBy 0..0
 * section.emptyReason 0..0
 * section.section 0..0
+* extension contains GMGraditetsforloebReference named GMGraditetsforloebReference 0..1
+* extension contains GMEksternGraditetsforloebReference named GMEksternGraditetsforloebReference 0..*
+
+Extension: GMGraditetsforloebReference
+Title: "Pregnancy episode of care identifier"
+Description: "The official pregnancy identifier"
+* . ^short = "Pregnancy identifier"
+* value[x] only Identifier
+* valueIdentifier 1..1
+* valueIdentifier.id 0..0
+* valueIdentifier.extension 0..0
+* valueIdentifier.use 0..0
+* valueIdentifier.type 0..0
+* valueIdentifier.system 1..1
+* valueIdentifier.system = "1.2.208.176.7.4.1"
+* valueIdentifier.value 1..1
+* valueIdentifier.period 0..0
+* valueIdentifier.assigner 0..0
+
+Extension: GMEksternGraditetsforloebReference
+Title: "External pregnancy episode of care identifier"
+Description: "Pregnancy identifier from external systems"
+* . ^short = "External pregnancy identifier"
+* value[x] only Identifier
+* valueIdentifier 1..1
+* valueIdentifier.id 0..0
+* valueIdentifier.extension 0..0
+* valueIdentifier.use 0..0
+* valueIdentifier.type 0..0
+* valueIdentifier.system 1..1
+* valueIdentifier.value 1..1
+* valueIdentifier.period 0..0
+* valueIdentifier.assigner 0..0
+
 
 Profile: GMPRFComposition
 Id: GMPRFComposition
@@ -428,67 +461,73 @@ Parent: GMDocumentComposition
 // child components
 * section.entry 1..*
 * section.entry contains
-    bmi 0..* and
-    cervixlaengde 0..* and
-    choriositet 0..* and
-    diastolisk-blodtryk 0..* and
-    erytrocytter 0..* and
-    fosteraktivitet 0..* and
-    fosterantal 0..* and
-    fosterpraesentation 0..* and
-    fosterskoen 0..* and
-    fostervand 0..* and
-    gestationsalder 0..* and
-    glucose 0..* and
-    hjertelyd 0..* and
-    hoejde 0..* and
-    ketoner 0..* and
-    kromosom-afvigelser 0..* and
-    leucocytter 0..* and
-    nitrit 0..* and
-    placentaplacering 0..* and
-    protein 0..* and
-    symfyse-fundus 0..* and
-    systolisk-blodtryk 0..* and
-    ul-bestemt-termin 0..* and
-    ul-bestemt-vaegt 0..* and
-    ul-fosterpraesentation 0..* and
-    vaegt 0..* and
-    vaegtafvigelse 0..* and
-    oedem-beskrivelse 0..* and
-    oedemlokalisation 0..* and
-    ekstra-fostermaalinger 0..* and
-    ekstra-maalinger 0..* and
-    ekstra-interval-maalinger 0..*
-* section.entry[bmi] only Reference(GMBmiMeasurementObs)
-* section.entry[cervixlaengde] only Reference(GMCervixlaengdeMeasurementObs)
-* section.entry[choriositet] only Reference(GMChoriositetMeasurementObs)
-* section.entry[diastolisk-blodtryk] only Reference(GMDiastoliskBlodtrykMeasurementObs)
-* section.entry[erytrocytter] only Reference(GMErytrocytterMeasurementObs)
-* section.entry[fosteraktivitet] only Reference(GMFosteraktivitetMeasurementObs)
-* section.entry[fosterantal] only Reference(GMFosterantalMeasurementObs)
-* section.entry[fosterpraesentation] only Reference(GMFosterpraesentationMeasurementObs)
-* section.entry[fosterskoen] only Reference(GMFosterskoenMeasurementObs)
-* section.entry[fostervand] only Reference(GMFostervandMeasurementObs)
-* section.entry[gestationsalder] only Reference(GMGestationsalderMeasurementObs)
-* section.entry[glucose] only Reference(GMGlucoseMeasurementObs)
-* section.entry[hjertelyd] only Reference(GMHjertelydMeasurementObs)
-* section.entry[hoejde] only Reference(GMHoejdeMeasurementObs)
-* section.entry[ketoner] only Reference(GMKetonerMeasurementObs)
-* section.entry[kromosom-afvigelser] only Reference(GMKromosomAfvigelserMeasurementObs)
-* section.entry[leucocytter] only Reference(GMLeucocytterMeasurementObs)
-* section.entry[nitrit] only Reference(GMNitritMeasurementObs)
-* section.entry[placentaplacering] only Reference(GMPlacentaplaceringMeasurementObs)
-* section.entry[protein] only Reference(GMProteinMeasurementObs)
-* section.entry[symfyse-fundus] only Reference(GMSymfyseFundusMeasurementObs)
-* section.entry[systolisk-blodtryk] only Reference(GMSystoliskBlodtrykMeasurementObs)
-* section.entry[ul-bestemt-termin] only Reference(GMUlBestemtTerminMeasurementObs)
-* section.entry[ul-bestemt-vaegt] only Reference(GMUlbestemtVaegtMeasurementObs)
-* section.entry[ul-fosterpraesentation] only Reference(GMUlFosterpraesentationMeasurementObs)
-* section.entry[vaegt] only Reference(GMVaegtMeasurementObs)
-* section.entry[vaegtafvigelse] only Reference(GMVaegtafvigelseMeasurementObs)
-* section.entry[oedem-beskrivelse] only Reference(GMOedemBeskrivelseMeasurementObs)
-* section.entry[oedemlokalisation] only Reference(GMOedemlokalisationMeasurementObs)
-* section.entry[ekstra-fostermaalinger] only Reference(GMFetusMeasurementObservation)
-* section.entry[ekstra-maalinger] only Reference(GMBaseObservation)
-* section.entry[ekstra-interval-maalinger] only Reference(GMIntervalObservation)
+//    bmi 0..* and
+//    cervixlaengde 0..* and
+//    choriositet 0..* and
+//    diastolisk-blodtryk 0..* and
+//    erytrocytter 0..* and
+//    fosteraktivitet 0..* and
+//    fosterantal 0..* and
+//    fosterpraesentation 0..* and
+//    fosterskoen 0..* and
+//    fostervand 0..* and
+//    gestationsalder 0..* and
+//    glucose 0..* and
+//    hjertelyd 0..* and
+//    hoejde 0..* and
+//    ketoner 0..* and
+//    kromosom-afvigelser 0..* and
+//    leucocytter 0..* and
+//    nitrit 0..* and
+//    placentaplacering 0..* and
+//    protein 0..* and
+//    symfyse-fundus 0..* and
+//    systolisk-blodtryk 0..* and
+//    ul-bestemt-termin 0..* and
+//    ul-bestemt-vaegt 0..* and
+//    ul-fosterpraesentation 0..* and
+//    vaegt 0..* and
+//    vaegtafvigelse 0..* and
+//    oedem-beskrivelse 0..* and
+//    oedemlokalisation 0..* and
+//    ekstra-fostermaalinger 0..* and
+//    ekstra-maalinger 0..* and
+//    ekstra-interval-maalinger 0..*
+    fostermaalinger 0..* and
+    maalinger 0..* and
+    interval-maalinger 0..*
+//* section.entry[bmi] only Reference(GMBmiMeasurementObs)
+//* section.entry[cervixlaengde] only Reference(GMCervixlaengdeMeasurementObs)
+//* section.entry[choriositet] only Reference(GMChoriositetMeasurementObs)
+//* section.entry[diastolisk-blodtryk] only Reference(GMDiastoliskBlodtrykMeasurementObs)
+//* section.entry[erytrocytter] only Reference(GMErytrocytterMeasurementObs)
+//* section.entry[fosteraktivitet] only Reference(GMFosteraktivitetMeasurementObs)
+//* section.entry[fosterantal] only Reference(GMFosterantalMeasurementObs)
+//* section.entry[fosterpraesentation] only Reference(GMFosterpraesentationMeasurementObs)
+//* section.entry[fosterskoen] only Reference(GMFosterskoenMeasurementObs)
+//* section.entry[fostervand] only Reference(GMFostervandMeasurementObs)
+//* section.entry[gestationsalder] only Reference(GMGestationsalderMeasurementObs)
+//* section.entry[glucose] only Reference(GMGlucoseMeasurementObs)
+//* section.entry[hjertelyd] only Reference(GMHjertelydMeasurementObs)
+//* section.entry[hoejde] only Reference(GMHoejdeMeasurementObs)
+//* section.entry[ketoner] only Reference(GMKetonerMeasurementObs)
+//* section.entry[kromosom-afvigelser] only Reference(GMKromosomAfvigelserMeasurementObs)
+//* section.entry[leucocytter] only Reference(GMLeucocytterMeasurementObs)
+//* section.entry[nitrit] only Reference(GMNitritMeasurementObs)
+//* section.entry[placentaplacering] only Reference(GMPlacentaplaceringMeasurementObs)
+//* section.entry[protein] only Reference(GMProteinMeasurementObs)
+//* section.entry[symfyse-fundus] only Reference(GMSymfyseFundusMeasurementObs)
+//* section.entry[systolisk-blodtryk] only Reference(GMSystoliskBlodtrykMeasurementObs)
+//* section.entry[ul-bestemt-termin] only Reference(GMUlBestemtTerminMeasurementObs)
+//* section.entry[ul-bestemt-vaegt] only Reference(GMUlbestemtVaegtMeasurementObs)
+//* section.entry[ul-fosterpraesentation] only Reference(GMUlFosterpraesentationMeasurementObs)
+//* section.entry[vaegt] only Reference(GMVaegtMeasurementObs)
+//* section.entry[vaegtafvigelse] only Reference(GMVaegtafvigelseMeasurementObs)
+//* section.entry[oedem-beskrivelse] only Reference(GMOedemBeskrivelseMeasurementObs)
+//* section.entry[oedemlokalisation] only Reference(GMOedemlokalisationMeasurementObs)
+//* section.entry[ekstra-fostermaalinger] only Reference(GMFetusMeasurementObservation)
+//* section.entry[ekstra-maalinger] only Reference(GMBaseObservation)
+//* section.entry[ekstra-interval-maalinger] only Reference(GMIntervalObservation)
+* section.entry[fostermaalinger] only Reference(GMFetusMeasurementObservation)
+* section.entry[maalinger] only Reference(GMBaseObservation)
+* section.entry[interval-maalinger] only Reference(GMIntervalObservation)

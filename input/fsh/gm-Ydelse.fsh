@@ -17,6 +17,6 @@ Parent: GMModelElement
 // code of child component
 * component[ydelsestype].code.coding.code = #228163007
 // type of child component
-* component[ydelsestype].value[x] only string
-
+* component[ydelsestype].value[x] only CodeableConcept
+* component[ydelsestype].valueCodeableConcept from VS-ydelse
 * extension[GMModelElementReference] 0..0

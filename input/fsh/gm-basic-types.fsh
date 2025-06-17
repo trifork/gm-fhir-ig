@@ -176,7 +176,15 @@ Parent: DkCoreOrganization
 * contact 0..0
 * partOf 0..0
 * endpoint 0..0
-* telecom 0..0
+* telecom 0..1
+* telecom.id 0..0
+* telecom.extension 0..0
+* telecom.system 1..1
+* telecom.system = #phone
+* telecom.value 1..1
+* telecom.use 0..0
+* telecom.rank 0..0
+* telecom.period 0..0
 * address 0..1
 
 Profile: GMModelElement

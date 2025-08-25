@@ -6,3 +6,5 @@ Usage: #definition
 * parameter[=].valueCanonical = $sct-dk-version
 * parameter[+].name = "includeDesignations"
 * parameter[=].valueBoolean = true
+* parameter[+].name = "apply-jurisdiction"
+* parameter[=].valueBoolean = true

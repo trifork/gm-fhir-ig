@@ -3,3 +3,5 @@ installation af sushi: følg https://fshschool.github.io/docs/sushi/installation
 generer IG: ./_genonce.bat
 
 resultatet findes i: output/index.html
+
+If you're having trouble compiling, run ./_updatePublisher.bat and let it update stuff. Then try again.

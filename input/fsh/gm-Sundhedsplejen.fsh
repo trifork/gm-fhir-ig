@@ -14,9 +14,9 @@ Parent: GMModelElement
 * extension[GMModelElementReference] 0..2
 * extension[GMModelElementReference] contains
     Sundhedsplejerske 0..1 and
-    SundhedsplejenUdpeger 0..1
+    Sundhedsplejen 0..1
 * extension[GMModelElementReference][Sundhedsplejerske].valueReference only Reference(GMSundhedsplejerskePractitioner)
-* extension[GMModelElementReference][SundhedsplejenUdpeger].valueReference only Reference(GMSundhedsplejenUdpegerOrganization)
+* extension[GMModelElementReference][Sundhedsplejen].valueReference only Reference(GMSundhedsplejenOrganization)
 
 
 Profile: GMSundhedsplejerskePractitioner
@@ -54,7 +54,7 @@ Parent: Practitioner
 * communication 0..0
 
 
-Profile: GMSundhedsplejenUdpegerOrganization
-Id: GMSundhedsplejenUdpegerOrganization
+Profile: GMSundhedsplejenOrganization
+Id: GMSundhedsplejenOrganization
 Parent: GMBaseOrganization
 

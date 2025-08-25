@@ -321,6 +321,7 @@ Parent: Composition
 * section.section 0..0
 * extension contains GMGraditetsforloebReference named GMGraditetsforloebReference 0..1
 * extension contains GMEksternGraditetsforloebReference named GMEksternGraditetsforloebReference 0..*
+* extension contains GMUdfoertTidspunkt named GMUdfoertTidspunkt 0..1
 
 Extension: GMGraditetsforloebReference
 Title: "Pregnancy episode of care identifier"
@@ -352,6 +353,13 @@ Description: "Pregnancy identifier from external systems"
 * valueIdentifier.value 1..1
 * valueIdentifier.period 0..0
 * valueIdentifier.assigner 0..0
+
+Extension: GMUdfoertTidspunkt
+Title: "Clinically relevant time for the document"
+Description: "Clinically relevant time for the document"
+* . ^short = "Clinically relevant time"
+* value[x] only dateTime
+* valueDateTime 1..1
 
 
 Profile: GMPRFComposition

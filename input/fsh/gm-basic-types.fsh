@@ -3,7 +3,6 @@ Id: GMObservation
 Parent: Observation
 // Resource
 * id 1..1
-* meta 0..0
 * implicitRules 0..0
 * language 0..0
 // DomainResource
@@ -105,7 +104,6 @@ Id: GMFetusRelatedPerson
 Parent: RelatedPerson
 // Resource
 * id 1..1
-* meta 0..0
 * implicitRules 0..0
 * language 0..0
 // DomainResource
@@ -153,7 +151,6 @@ Id: GMBaseOrganization
 Parent: DkCoreOrganization
 // Resource
 * id 1..1
-* meta 0..0
 * implicitRules 0..0
 * language 0..0
 // DomainResource
@@ -223,8 +220,6 @@ Description: "Component that references another model element"
 Profile: GMDocumentBundle
 Id: GMDocumentBundle
 Parent: Bundle
-* id 0..0
-* meta 0..0
 * implicitRules 0..0
 * language 0..0
 * identifier 0..0
@@ -276,8 +271,6 @@ Parent: GMDocumentBundle
 Profile: GMDocumentComposition
 Id: GMDocumentComposition
 Parent: Composition
-* id 0..0
-* meta 0..0
 * implicitRules 0..0
 * language 0..0
 * text 0..0

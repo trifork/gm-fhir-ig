@@ -222,9 +222,7 @@ Id: GMDocumentBundle
 Parent: Bundle
 * implicitRules 0..0
 * language 0..0
-* identifier 0..0
 * type = #document
-* timestamp 0..0
 * total 0..0
 * link 0..0
 * signature 0..0
@@ -232,7 +230,7 @@ Parent: Bundle
 * entry.extension 0..0
 * entry.modifierExtension 0..0
 * entry.link 0..0
-* entry.fullUrl 0..0
+* entry.fullUrl 1..1
 * entry.resource 1..1
 * entry.search 0..0
 * entry.request 0..0
@@ -361,8 +359,8 @@ Parent: GMDocumentComposition
 * type.coding.code = #PRF
 * title = "Svangerskabsjournal"
 // slicing rules
-* section.entry ^slicing.discriminator.type = #type
-* section.entry ^slicing.discriminator.path = "$this.resource"
+* section.entry ^slicing.discriminator.type = #profile
+* section.entry ^slicing.discriminator.path = "$this.reference"
 * section.entry ^slicing.ordered = false
 * section.entry ^slicing.rules = #open
 // child components
@@ -418,7 +416,7 @@ Parent: GMDocumentComposition
 * title = "Vandrejournal"
 // slicing rules
 * section.entry ^slicing.discriminator.type = #type
-* section.entry ^slicing.discriminator.path = "$this.resource"
+* section.entry ^slicing.discriminator.path = "$this.reference"
 * section.entry ^slicing.ordered = false
 * section.entry ^slicing.rules = #open
 // child components
@@ -464,7 +462,7 @@ Parent: GMDocumentComposition
 * title = "Målinger"
 // slicing rules
 * section.entry ^slicing.discriminator.type = #type
-* section.entry ^slicing.discriminator.path = "$this.resource"
+* section.entry ^slicing.discriminator.path = "$this.reference"
 * section.entry ^slicing.ordered = false
 * section.entry ^slicing.rules = #open
 // child components

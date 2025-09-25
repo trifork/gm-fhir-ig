@@ -75,9 +75,8 @@ Description: "Component that contains an interval of physical quantities"
 * extension[low].value[x].value 1..1
 * extension[low].value[x].comparator 0..1
 * extension[low].value[x].unit 1..1
-* extension[low].value[x].system 1..1
-* extension[low].value[x].system = $sct
-* extension[low].value[x].code 1..1
+* extension[low].value[x].system 0..0
+* extension[low].value[x].code 0..0
 * extension[high].id 0..0
 * extension[high].extension 0..0
 * extension[high].value[x] 1..1
@@ -87,9 +86,8 @@ Description: "Component that contains an interval of physical quantities"
 * extension[high].value[x].value 1..1
 * extension[high].value[x].comparator 0..1
 * extension[high].value[x].unit 1..1
-* extension[high].value[x].system 1..1
-* extension[high].value[x].system = $sct
-* extension[high].value[x].code 1..1
+* extension[high].value[x].system 0..0
+* extension[high].value[x].code 0..0
 
 Profile: GMFetusMeasurementObservation
 Id: GMFetusMeasurementObservation

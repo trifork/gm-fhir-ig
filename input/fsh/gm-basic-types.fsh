@@ -233,6 +233,19 @@ Parent: Bundle
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resolve()"
+* entry ^slicing.description = "Slicing based on the resource type"
+* entry ^slicing.rules = #open
+* entry contains
+   patient 0..1 and
+   fetus-related-person 0..* and
+   organization 0..* and
+   observation 0..*
+* entry[patient].resource only DkCorePatient
+* entry[fetus-related-person].resource only GMFetusRelatedPerson
+* entry[organization].resource only GMBaseOrganization
+* entry[observation].resource only GMObservation
 
 Profile: GMPRFDocumentBundle
 Id: GMPRFDocumentBundle

@@ -237,8 +237,8 @@ Parent: Bundle
 Profile: GMPRFDocumentBundle
 Id: GMPRFDocumentBundle
 Parent: GMDocumentBundle
-* entry ^slicing.discriminator.type = #type
-* entry ^slicing.discriminator.path = "$this.resource"
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resolve()"
 * entry ^slicing.description = "Slicing based on the resource type"
 * entry ^slicing.rules = #open
 * entry contains prf-composition 1..1 MS
@@ -247,8 +247,8 @@ Parent: GMDocumentBundle
 Profile: GMPSCRDocumentBundle
 Id: GMPSCRDocumentBundle
 Parent: GMDocumentBundle
-* entry ^slicing.discriminator.type = #type
-* entry ^slicing.discriminator.path = "$this.resource"
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resolve()"
 * entry ^slicing.description = "Slicing based on the resource type"
 * entry ^slicing.rules = #open
 * entry contains pscr-composition 1..1 MS
@@ -257,8 +257,8 @@ Parent: GMDocumentBundle
 Profile: GMPMRDocumentBundle
 Id: GMPMRDocumentBundle
 Parent: GMDocumentBundle
-* entry ^slicing.discriminator.type = #type
-* entry ^slicing.discriminator.path = "$this.resource"
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resolve()"
 * entry ^slicing.description = "Slicing based on the resource type"
 * entry ^slicing.rules = #open
 * entry contains pmr-composition 1..1 MS
@@ -358,7 +358,7 @@ Parent: GMDocumentComposition
 * title = "Svangerskabsjournal"
 // slicing rules
 * section.entry ^slicing.discriminator.type = #profile
-* section.entry ^slicing.discriminator.path = "$this.reference"
+* section.entry ^slicing.discriminator.path = "resolve()"
 * section.entry ^slicing.ordered = false
 * section.entry ^slicing.rules = #open
 // child components
@@ -413,8 +413,8 @@ Parent: GMDocumentComposition
 * type.coding.code = #PSCR
 * title = "Vandrejournal"
 // slicing rules
-* section.entry ^slicing.discriminator.type = #type
-* section.entry ^slicing.discriminator.path = "$this.reference"
+* section.entry ^slicing.discriminator.type = #profile
+* section.entry ^slicing.discriminator.path = "resolve()"
 * section.entry ^slicing.ordered = false
 * section.entry ^slicing.rules = #open
 // child components
@@ -459,8 +459,8 @@ Parent: GMDocumentComposition
 * type.coding.code = #PMR
 * title = "Målinger"
 // slicing rules
-* section.entry ^slicing.discriminator.type = #type
-* section.entry ^slicing.discriminator.path = "$this.reference"
+* section.entry ^slicing.discriminator.type = #profile
+* section.entry ^slicing.discriminator.path = "resolve()"
 * section.entry ^slicing.ordered = false
 * section.entry ^slicing.rules = #open
 // child components

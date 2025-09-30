@@ -241,11 +241,15 @@ Parent: Bundle
    patient 0..1 and
    fetus-related-person 0..* and
    organization 0..* and
-   observation 0..*
+   observation 0..* and
+   condition 0..* and
+   procedure 0..*
 * entry[patient].resource only DkCorePatient
 * entry[fetus-related-person].resource only GMFetusRelatedPerson
 * entry[organization].resource only GMBaseOrganization
 * entry[observation].resource only GMObservation
+* entry[condition].resource only GMSomatiskDiagnoseTypeCondition
+* entry[procedure].resource only GMTidligereRelevantOperationProcedure
 
 Profile: GMPRFDocumentBundle
 Id: GMPRFDocumentBundle

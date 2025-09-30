@@ -192,11 +192,11 @@ Parent: GMObservation
 * component.modifierExtension 0..0
 * component.code.id 0..0
 * component.code.extension 0..0
-* component.code.coding 1..1
+* component.code.coding 1..2
 * component.code.coding.id 0..0
 * component.code.coding.extension 0..0
 * component.code.coding.system 1..1
-* component.code.coding.system = $sct
+//* component.code.coding.system = $sct
 * component.code.coding.version 0..0
 * component.code.coding.code 1..1
 * component.code.coding.userSelected 0..0

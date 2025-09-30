@@ -15,8 +15,7 @@ Parent: GMModelElement
     alkoholindtag-før-graviditet 0..1 and
     alkoholindtag-under-graviditet 0..1 and
     antal-gange-med5+genstande 0..1 and
-    genstande-pr-uge-før 0..1 and
-    genstande-pr-uge-under 0..1 and
+    genstande-pr-uge 0..2 and
     tweak-points 0..1
 
 // code of child component
@@ -35,14 +34,9 @@ Parent: GMModelElement
 * component[antal-gange-med5+genstande].value[x] only integer
 
 // code of child component
-* component[genstande-pr-uge-før].code.coding.code = #228958009
+* component[genstande-pr-uge].code.coding.code = #228958009
 // type of child component
-* component[genstande-pr-uge-før].value[x] only integer
-
-// code of child component
-* component[genstande-pr-uge-under].code.coding.code = #228958009
-// type of child component
-* component[genstande-pr-uge-under].value[x] only integer
+* component[genstande-pr-uge].value[x] only integer
 
 // code of child component
 * component[tweak-points].code.coding.code = #568251000005102

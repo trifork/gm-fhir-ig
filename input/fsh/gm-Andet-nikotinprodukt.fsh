@@ -13,9 +13,9 @@ Parent: GMModelElement
 * component 0..11
 * component contains
     nikotinposer 0..1 and
-    vandpibe 0..1 and
-    vandpibeforbrug 0..1 and
-    nikotinposer-antal/dag 0..1 and
+    vandpibe 0..2 and
+//    vandpibeforbrug 0..1 and
+    E/dag 0..3 and
     tyggetobak 0..1 and
     tyggetobak-antal/dag 0..1 and
     nikotintyggegummi 0..1 and
@@ -32,17 +32,18 @@ Parent: GMModelElement
 // code of child component
 * component[vandpibe].code.coding.code = #722495000
 // type of child component
-* component[vandpibe].value[x] only boolean
+* component[vandpibe].value[x] only boolean or CodeableConcept
 
 // code of child component
-* component[vandpibeforbrug].code.coding.code = #722495000
+//* component[vandpibeforbrug].code.coding.code = #722495000
 // type of child component
-* component[vandpibeforbrug].value[x] only CodeableConcept
+//* component[vandpibeforbrug].value[x] only CodeableConcept
 * component[vandpibeforbrug].valueCodeableConcept from VS-vandpibe-dagligt-lejlighedsvist
+
 // code of child component
-* component[nikotinposer-antal/dag].code.coding.code = #258950000
+* component[E/dag].code.coding.code = #258950000
 // type of child component
-* component[nikotinposer-antal/dag].value[x] only integer
+* component[E/dag].value[x] only integer
 
 // code of child component
 * component[tyggetobak].code.coding.code = #81911001
@@ -50,9 +51,9 @@ Parent: GMModelElement
 * component[tyggetobak].value[x] only boolean
 
 // code of child component
-* component[tyggetobak-antal/dag].code.coding.code = #258950000
+//* component[tyggetobak-antal/dag].code.coding.code = #258950000
 // type of child component
-* component[tyggetobak-antal/dag].value[x] only integer
+//* component[tyggetobak-antal/dag].value[x] only integer
 
 // code of child component
 * component[nikotintyggegummi].code.coding.code = #598101000005106
@@ -75,8 +76,8 @@ Parent: GMModelElement
 * component[andetnikotinprodukt/røgfri-tobak].value[x] only string
 
 // code of child component
-* component[nikotintyggegummi-antal/dag].code.coding.code = #258950000
+//* component[nikotintyggegummi-antal/dag].code.coding.code = #258950000
 // type of child component
-* component[nikotintyggegummi-antal/dag].value[x] only integer
+//* component[nikotintyggegummi-antal/dag].value[x] only integer
 
 * extension[GMModelElementReference] 0..0

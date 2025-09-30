@@ -61,6 +61,13 @@ Parent: GMModelElement
 // type of child component
 * component[henvist-til-arbejdsmedicinsk-klinik].value[x] only boolean
 
+
+// slicing rules
+* extension.valueReference ^slicing.discriminator.type = #profile
+* extension.valueReference ^slicing.discriminator.path = "resolve()"
+* extension.valueReference ^slicing.ordered = false
+* extension.valueReference ^slicing.rules = #open
+
 * extension[GMModelElementReference] 0..*
 // child model elements
 * extension[GMModelElementReference] contains

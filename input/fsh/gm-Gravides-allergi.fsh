@@ -6,7 +6,7 @@ Parent: GMModelElement
 * code.coding.code = #1300212001
 // slicing rules
 * component ^slicing.discriminator.type = #value
-* component ^slicing.discriminator.path = "code"
+* component ^slicing.discriminator.path = "code.coding.code"
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 // how many child components

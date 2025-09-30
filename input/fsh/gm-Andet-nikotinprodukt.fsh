@@ -17,12 +17,12 @@ Parent: GMModelElement
 //    vandpibeforbrug 0..1 and
     E/dag 0..3 and
     tyggetobak 0..1 and
-    tyggetobak-antal/dag 0..1 and
+//    tyggetobak-antal/dag 0..1 and
     nikotintyggegummi 0..1 and
     e-cigaret 0..1 and
     e-cigaret-milliliter/dag 0..1 and
-    andetnikotinprodukt/røgfri-tobak 0..1 and
-    nikotintyggegummi-antal/dag 0..1
+    andetnikotinprodukt/røgfri-tobak 0..1
+//    nikotintyggegummi-antal/dag 0..1
 
 // code of child component
 * component[nikotinposer].code.coding.code = #598111000005109

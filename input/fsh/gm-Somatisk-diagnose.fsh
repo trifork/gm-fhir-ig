@@ -3,7 +3,6 @@ Id: GMSomatiskDiagnoseTypeCondition
 Parent: Condition
 // Resource
 * id 1..1
-* meta 0..0
 * implicitRules 0..0
 * language 0..0
 // DomainResource

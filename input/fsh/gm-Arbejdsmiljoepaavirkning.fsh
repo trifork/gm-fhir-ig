@@ -61,16 +61,14 @@ Parent: GMModelElement
 // type of child component
 * component[henvist-til-arbejdsmedicinsk-klinik].value[x] only boolean
 
+* extension contains
+   TypePaavirkningModelElementReference named TypePaavirkningModelElementReference 0..*
 
-// slicing rules
-* extension.valueReference ^slicing.discriminator.type = #profile
-* extension.valueReference ^slicing.discriminator.path = "resolve()"
-* extension.valueReference ^slicing.ordered = false
-* extension.valueReference ^slicing.rules = #open
+Extension: TypePaavirkningModelElementReference
+Title: "TypePåvirkning Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMTypePaavirkningObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
 
-* extension[GMModelElementReference] 0..*
-// child model elements
-* extension[GMModelElementReference] contains
-    TypePåvirkning 0..*
-
-* extension[GMModelElementReference][TypePåvirkning].valueReference only Reference(GMTypePaavirkningObs)

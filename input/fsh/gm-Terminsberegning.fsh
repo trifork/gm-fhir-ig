@@ -43,4 +43,4 @@ Parent: GMModelElement
 // type of child component
 * component[bemærkning].value[x] only string
 
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

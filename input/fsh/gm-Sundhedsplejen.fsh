@@ -10,13 +10,26 @@ Parent: GMModelElement
 * component ^slicing.rules = #open
 // how many child components
 * component 0..0
-// child model elements
-* extension[GMModelElementReference] 0..2
-* extension[GMModelElementReference] contains
-    Sundhedsplejerske 0..1 and
-    Sundhedsplejen 0..1
-* extension[GMModelElementReference][Sundhedsplejerske].valueReference only Reference(GMSundhedsplejerskePractitioner)
-* extension[GMModelElementReference][Sundhedsplejen].valueReference only Reference(GMSundhedsplejenOrganization)
+
+* extension contains
+   SundhedsplejerskeModelElementReference named SundhedsplejerskeModelElementReference 0..1 and
+   SundhedsplejenModelElementReference named SundhedsplejenModelElementReference 0..1
+
+Extension: SundhedsplejerskeModelElementReference
+Title: "Sundhedsplejerske Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMSundhedsplejerskePractitioner)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
+
+Extension: SundhedsplejenModelElementReference
+Title: "Sundhedsplejen Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMSundhedsplejenOrganization)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
 
 
 Profile: GMSundhedsplejerskePractitioner

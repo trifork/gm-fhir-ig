@@ -61,4 +61,4 @@ Parent: GMModelElement
 // type of child component
 * component[omsorgsniveau].value[x] only CodeableConcept
 * component[omsorgsniveau].valueCodeableConcept from VS-omsorgsniveau
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

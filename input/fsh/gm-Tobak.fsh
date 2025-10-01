@@ -49,4 +49,4 @@ Parent: GMModelElement
 // type of child component
 * component[dato-rygeophør].value[x] only dateTime
 
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

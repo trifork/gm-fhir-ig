@@ -37,11 +37,23 @@ Parent: GMModelElement
 // type of child component
 * component[ønsket-ugedag-for-konsultationer].value[x] only CodeableConcept
 * component[ønsket-ugedag-for-konsultationer].valueCodeableConcept from VS-oensket-ugedag
-* extension[GMModelElementReference] 0..2
-// child model elements
-* extension[GMModelElementReference] contains
-    TilknyttetJordemodercenter 0..1 and
-    ØnsketJordemodercenter 0..1
 
-* extension[GMModelElementReference][TilknyttetJordemodercenter].valueReference only Reference(GMTilknyttetJordemodercenterOrganization)
-* extension[GMModelElementReference][ØnsketJordemodercenter].valueReference only Reference(GMOensketJordemodercenterOrganization)
+* extension contains
+   TilknyttetJordemodercenterModelElementReference named TilknyttetJordemodercenterModelElementReference 0..1 and
+   OensketJordemodercenterModelElementReference named OensketJordemodercenterModelElementReference 0..1
+
+Extension: TilknyttetJordemodercenterModelElementReference
+Title: "TilknyttetJordemodercenter Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMTilknyttetJordemodercenterOrganization)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
+
+Extension: OensketJordemodercenterModelElementReference
+Title: "ØnsketJordemodercenter Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMOensketJordemodercenterOrganization)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

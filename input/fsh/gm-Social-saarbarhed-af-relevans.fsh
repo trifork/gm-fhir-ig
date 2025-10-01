@@ -19,9 +19,13 @@ Parent: GMModelElement
 // type of child component
 * component[social-sårbarhed-af-relevans].value[x] only boolean
 
-* extension[GMModelElementReference] 0..1
-// child model elements
-* extension[GMModelElementReference] contains
-    SocialSårbarhed 0..1
+* extension contains
+   SocialSaarbarhedModelElementReference named SocialSaarbarhedModelElementReference 0..1
 
-* extension[GMModelElementReference][SocialSårbarhed].valueReference only Reference(GMSocialSaarbarhedObs)
+Extension: SocialSaarbarhedModelElementReference
+Title: "SocialSårbarhed Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMSocialSaarbarhedObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

@@ -25,11 +25,23 @@ Parent: GMModelElement
 // type of child component
 * component[boligforhold].value[x] only CodeableConcept
 * component[boligforhold].valueCodeableConcept from VS-boligforhold
-* extension[GMModelElementReference] 0..2
-// child model elements
-* extension[GMModelElementReference] contains
-    JuridiskMedforælder 0..1 and
-    Partner 0..1
 
-* extension[GMModelElementReference][JuridiskMedforælder].valueReference only Reference(GMJuridiskMedforaelderObs)
-* extension[GMModelElementReference][Partner].valueReference only Reference(GMPartnerObs)
+* extension contains
+   JuridiskMedforaelderModelElementReference named JuridiskMedforaelderModelElementReference 0..1 and
+   PartnerModelElementReference named PartnerModelElementReference 0..1
+
+Extension: JuridiskMedforaelderModelElementReference
+Title: "JuridiskMedforælder Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMJuridiskMedforaelderObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
+
+Extension: PartnerModelElementReference
+Title: "Partner Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMPartnerObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

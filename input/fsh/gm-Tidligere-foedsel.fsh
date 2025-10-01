@@ -61,13 +61,31 @@ Parent: GMModelElement
 // type of child component
 * component[ukompliceret-barselsforløb].value[x] only boolean
 
-* extension[GMModelElementReference] 0..*
-// child model elements
-* extension[GMModelElementReference] contains
-    Barn 0..* and
-    Fødselsforløbstræk 0..* and
-    Graviditetsforløbstræk 0..*
+* extension contains
+   BarnModelElementReference named BarnModelElementReference 0..* and
+   FoedselsforloebstraekModelElementReference named FoedselsforloebstraekModelElementReference 0..* and
+   GraviditetsforloebstraekModelElementReference named GraviditetsforloebstraekModelElementReference 0..*
 
-* extension[GMModelElementReference][Barn].valueReference only Reference(GMBarnObs)
-* extension[GMModelElementReference][Fødselsforløbstræk].valueReference only Reference(GMFoedselsforloebstraekObs)
-* extension[GMModelElementReference][Graviditetsforløbstræk].valueReference only Reference(GMGraviditetsforloebstraekObs)
+Extension: BarnModelElementReference
+Title: "Barn Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMBarnObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
+
+Extension: FoedselsforloebstraekModelElementReference
+Title: "Fødselsforløbstræk Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMFoedselsforloebstraekObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
+
+Extension: GraviditetsforloebstraekModelElementReference
+Title: "Graviditetsforløbstræk Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMGraviditetsforloebstraekObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

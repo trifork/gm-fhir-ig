@@ -37,4 +37,4 @@ Parent: GMModelElement
 // type of child component
 * component[tolkesprog].value[x] only CodeableConcept
 //* component[tolkesprog].valueCodeableConcept from VS-iso-639--sprog-
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

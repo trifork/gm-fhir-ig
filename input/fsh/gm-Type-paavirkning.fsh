@@ -19,4 +19,4 @@ Parent: GMModelElement
 // type of child component
 * component[type-af-arbejdsmiljøpåvirkning].value[x] only CodeableConcept
 * component[type-af-arbejdsmiljøpåvirkning].valueCodeableConcept from VS-paavirkningstype
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

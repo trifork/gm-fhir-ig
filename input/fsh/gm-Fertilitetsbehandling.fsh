@@ -37,4 +37,4 @@ Parent: GMModelElement
 // type of child component
 * component[langvarigt-uhonoreret-graviditetsønske].value[x] only boolean
 
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

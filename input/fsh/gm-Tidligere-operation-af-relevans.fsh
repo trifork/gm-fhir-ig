@@ -25,9 +25,13 @@ Parent: GMModelElement
 // type of child component
 * component[tidligere-operation-af-relevans].value[x] only boolean
 
-* extension[GMModelElementReference] 0..*
-// child model elements
-* extension[GMModelElementReference] contains
-    TidligereRelevantOperation 0..*
+* extension contains
+   TidligereRelevantOperationModelElementReference named TidligereRelevantOperationModelElementReference 0..*
 
-* extension[GMModelElementReference][TidligereRelevantOperation].valueReference only Reference(GMTidligereRelevantOperationProcedure)
+Extension: TidligereRelevantOperationModelElementReference
+Title: "TidligereRelevantOperation Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMTidligereRelevantOperationProcedure)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

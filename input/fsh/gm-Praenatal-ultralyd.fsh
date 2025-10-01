@@ -25,4 +25,4 @@ Parent: GMModelElement
 // type of child component
 * component[ønskes2trimesterscanning].value[x] only boolean
 
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

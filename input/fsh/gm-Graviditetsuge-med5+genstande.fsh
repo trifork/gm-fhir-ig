@@ -19,4 +19,4 @@ Parent: GMModelElement
 // type of child component
 * component[graviditetsuge].value[x] only integer
 
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

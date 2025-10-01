@@ -80,4 +80,4 @@ Parent: GMModelElement
 // type of child component
 //* component[nikotintyggegummi-antal/dag].value[x] only integer
 
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

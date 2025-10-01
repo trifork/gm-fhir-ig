@@ -19,4 +19,4 @@ Parent: GMModelElement
 // type of child component
 * component[anlægsbærer].value[x] only CodeableConcept
 * component[anlægsbærer].valueCodeableConcept from VS-foraelder-anlaegsbaerer
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

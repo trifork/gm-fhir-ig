@@ -25,9 +25,13 @@ Parent: GMModelElement
 // type of child component
 * component[somatisk-sygdom].value[x] only boolean
 
-* extension[GMModelElementReference] 0..1
-// child model elements
-* extension[GMModelElementReference] contains
-    SomatiskDiagnose 0..1
+* extension contains
+   SomatiskDiagnoseModelElementReference named SomatiskDiagnoseModelElementReference 0..1
 
-* extension[GMModelElementReference][SomatiskDiagnose].valueReference only Reference(GMSomatiskDiagnoseTypeCondition)
+Extension: SomatiskDiagnoseModelElementReference
+Title: "SomatiskDiagnose Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMSomatiskDiagnoseTypeCondition)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

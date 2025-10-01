@@ -205,15 +205,15 @@ Parent: GMObservation
 * component.dataAbsentReason 0..0
 * component.interpretation 0..0
 * component.referenceRange 0..0
-* extension contains GMModelElementReference named GMModelElementReference 0..*
+//* extension contains GMModelElementReference named GMModelElementReference 0..*
 
-Extension: GMModelElementReference
-Title: "Model element reference"
-Description: "Component that references another model element"
-* . ^short = "Model element reference"
-* value[x] only Reference(Resource)
-* valueReference 1..1
-* value[x] ^type.aggregation = #referenced
+//Extension: GMModelElementReference
+//Title: "Model element reference"
+//Description: "Component that references another model element"
+//* . ^short = "Model element reference"
+//* value[x] only Reference(Resource)
+//* valueReference 1..1
+//* value[x] ^type.aggregation = #referenced
 
 Profile: GMDocumentBundle
 Id: GMDocumentBundle

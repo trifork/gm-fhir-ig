@@ -19,11 +19,22 @@ Parent: GMModelElement
 // type of child component
 * component[ønskes-hjemmefødsel].value[x] only boolean
 
-* extension[GMModelElementReference] 0..2
-// child model elements
-* extension[GMModelElementReference] contains
-    PlanlagtFødested 0..1 and
-    ØnsketFødested 0..1
+* extension contains
+   PlanlagtFoedestedModelElementReference named PlanlagtFoedestedModelElementReference 0..1 and
+   OensketFoedestedModelElementReference named OensketFoedestedModelElementReference 0..1
 
-* extension[GMModelElementReference][PlanlagtFødested].valueReference only Reference(GMPlanlagtFoedestedOrganization)
-* extension[GMModelElementReference][ØnsketFødested].valueReference only Reference(GMOensketFoedestedOrganization)
+Extension: PlanlagtFoedestedModelElementReference
+Title: "PlanlagtFødested Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMPlanlagtFoedestedOrganization)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
+
+Extension: OensketFoedestedModelElementReference
+Title: "ØnsketFødested Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMOensketFoedestedOrganization)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

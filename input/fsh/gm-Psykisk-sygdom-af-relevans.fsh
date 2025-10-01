@@ -19,9 +19,13 @@ Parent: GMModelElement
 // type of child component
 * component[psykisk-sygdom-af-relevans].value[x] only boolean
 
-* extension[GMModelElementReference] 0..1
-// child model elements
-* extension[GMModelElementReference] contains
-    PsykiskSygdom 0..1
+* extension contains
+   PsykiskSygdomModelElementReference named PsykiskSygdomModelElementReference 0..1
 
-* extension[GMModelElementReference][PsykiskSygdom].valueReference only Reference(GMPsykiskSygdomObs)
+Extension: PsykiskSygdomModelElementReference
+Title: "PsykiskSygdom Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMPsykiskSygdomObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

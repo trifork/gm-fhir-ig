@@ -31,9 +31,13 @@ Parent: GMModelElement
 // type of child component
 * component[dato-ophør-andet-nikotinprodukt].value[x] only dateTime
 
-* extension[GMModelElementReference] 0..1
-// child model elements
-* extension[GMModelElementReference] contains
-    AndetNikotinprodukt 0..1
+* extension contains
+   AndetNikotinproduktModelElementReference named AndetNikotinproduktModelElementReference 0..1
 
-* extension[GMModelElementReference][AndetNikotinprodukt].valueReference only Reference(GMAndetNikotinproduktObs)
+Extension: AndetNikotinproduktModelElementReference
+Title: "AndetNikotinprodukt Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMAndetNikotinproduktObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

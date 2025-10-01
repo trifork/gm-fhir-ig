@@ -43,11 +43,22 @@ Parent: GMModelElement
 // type of child component
 * component[indikation-for-henvisning-til-udredning/screening].value[x] only boolean
 
-* extension[GMModelElementReference] 0..*
-// child model elements
-* extension[GMModelElementReference] contains
-    Hæmoglobinopatiscreening 0..1 and
-    HæmoglobinopatiIFamilien 0..*
+* extension contains
+   HaemoglobinopatiscreeningModelElementReference named HaemoglobinopatiscreeningModelElementReference 0..1 and
+   HaemoglobinopatiIFamilienModelElementReference named HaemoglobinopatiIFamilienModelElementReference 0..*
 
-* extension[GMModelElementReference][Hæmoglobinopatiscreening].valueReference only Reference(GMHaemoglobinopatiscreeningObs)
-* extension[GMModelElementReference][HæmoglobinopatiIFamilien].valueReference only Reference(GMHaemoglobinopatiIFamilienObs)
+Extension: HaemoglobinopatiscreeningModelElementReference
+Title: "Hæmoglobinopatiscreening Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMHaemoglobinopatiscreeningObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced
+
+Extension: HaemoglobinopatiIFamilienModelElementReference
+Title: "HæmoglobinopatiIFamilien Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMHaemoglobinopatiIFamilienObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

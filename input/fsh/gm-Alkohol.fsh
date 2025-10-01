@@ -43,9 +43,13 @@ Parent: GMModelElement
 // type of child component
 * component[tweak-points].value[x] only integer
 
-* extension[GMModelElementReference] 0..*
-// child model elements
-* extension[GMModelElementReference] contains
-    GraviditetsugeMed5+Genstande 0..*
+* extension contains
+   GraviditetsugeMed5GenstandeModelElementReference named GraviditetsugeMed5GenstandeModelElementReference 0..*
 
-* extension[GMModelElementReference][GraviditetsugeMed5+Genstande].valueReference only Reference(GMGraviditetsugeMed5GenstandeObs)
+Extension: GraviditetsugeMed5GenstandeModelElementReference
+Title: "GraviditetsugeMed5+Genstande Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMGraviditetsugeMed5GenstandeObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

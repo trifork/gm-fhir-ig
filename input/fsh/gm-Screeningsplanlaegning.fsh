@@ -25,4 +25,4 @@ Parent: GMModelElement
 // type of child component
 * component[status].value[x] only CodeableConcept
 * component[status].valueCodeableConcept from VS-screeningsstatus
-* extension[GMModelElementReference] 0..0
+//* extension[GMModelElementReference] 0..0

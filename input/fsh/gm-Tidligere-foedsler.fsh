@@ -12,11 +12,13 @@ Parent: GMModelElement
 // how many child components
 * component 0..0
 
+* extension contains
+   TidligereFoedselModelElementReference named TidligereFoedselModelElementReference 1..*
 
-
-* extension[GMModelElementReference] 1..*
-// child model elements
-* extension[GMModelElementReference] contains
-    TidligereFødsel 1..*
-
-* extension[GMModelElementReference][TidligereFødsel].valueReference only Reference(GMTidligereFoedselObs)
+Extension: TidligereFoedselModelElementReference
+Title: "TidligereFødsel Model element reference"
+Description: "Component that references another model element"
+* . ^short = "Model element reference"
+* value[x] only Reference(GMTidligereFoedselObs)
+* valueReference 1..1
+* value[x] ^type.aggregation = #referenced

@@ -17,11 +17,11 @@ Parent: Observation
 * category 0..0
 * code.id 0..0
 * code.extension 0..0
-* code.coding 1..1
+* code.coding 1..2
 * code.coding.id 0..0
 * code.coding.extension 0..0
 * code.coding.system 1..1
-* code.coding.system = $sct
+//* code.coding.system = $sct
 * code.coding.version 0..0
 * code.coding.code 1..1
 * code.coding.userSelected 0..0

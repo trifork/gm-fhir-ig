@@ -3,7 +3,18 @@ Id: GMBemaerkningerVaccObs
 Parent: GMModelElement
 
 // code for the model element
-* code.coding.code = #129019007
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "code"
+* code.coding ^slicing.ordered = false
+* code.coding ^slicing.rules = #open
+* code.coding 2..2
+* code.coding contains
+   qualifier-code 1..1  and
+   snomed-code 1..1
+* code.coding[qualifier-code].system = "GM-qualifiers"
+* code.coding[qualifier-code].code = #bemaerkningerVaccObs
+* code.coding[snomed-code].system = $sct
+* code.coding[snomed-code].code = #129019007
 // slicing rules
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code.coding.code"

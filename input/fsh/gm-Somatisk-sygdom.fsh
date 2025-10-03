@@ -26,7 +26,7 @@ Parent: GMModelElement
 * component[somatisk-sygdom].value[x] only boolean
 
 * extension contains
-   SomatiskDiagnoseModelElementReference named SomatiskDiagnoseModelElementReference 0..1
+   SomatiskDiagnoseModelElementReference named SomatiskDiagnoseModelElementReference 0..*
 
 Extension: SomatiskDiagnoseModelElementReference
 Title: "SomatiskDiagnose Model element reference"

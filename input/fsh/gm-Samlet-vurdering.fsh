@@ -47,12 +47,34 @@ Parent: GMModelElement
 * component[vurdering-udfra-anamnese-undersøgelser-og-psykosociale-forhold].value[x] only string
 
 // code of child component
-* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding.code = #432678004
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding ^slicing.discriminator.type = #value
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding ^slicing.discriminator.path = "code"
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding ^slicing.ordered = false
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding ^slicing.rules = #open
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding 2..2
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding contains
+   qualifier-code 1..1  and
+   snomed-code 1..1
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding[qualifier-code].system = "GM-qualifiers"
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding[qualifier-code].code = #behovForHenvisningTilSocialOgSundhedsforvaltningen
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding[snomed-code].system = $sct
+* component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].code.coding[snomed-code].code = #432678004
 // type of child component
 * component[årsag-til-behov-for-henvisning-social-og-sundhedsforvaltning].value[x] only string
 
 // code of child component
-* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding.code = #432678004
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding ^slicing.discriminator.type = #value
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding ^slicing.discriminator.path = "code"
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding ^slicing.ordered = false
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding ^slicing.rules = #open
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding 2..2
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding contains
+   qualifier-code 1..1  and
+   snomed-code 1..1
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding[qualifier-code].system = "GM-qualifiers"
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding[qualifier-code].code = #behovForHenvisningTilObstetriskVurdering
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding[snomed-code].system = $sct
+* component[årsag-til-behov-for-obstetrisk-henvisning].code.coding[snomed-code].code = #432678004
 // type of child component
 * component[årsag-til-behov-for-obstetrisk-henvisning].value[x] only string
 

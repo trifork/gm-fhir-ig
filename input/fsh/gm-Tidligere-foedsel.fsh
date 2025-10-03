@@ -47,12 +47,34 @@ Parent: GMModelElement
 * component[fødselsoplevelse].value[x] only CodeableConcept
 * component[fødselsoplevelse].valueCodeableConcept from VS-foedselsoplevelse
 // code of child component
-* component[bemærkninger-graviditetsforløb].code.coding.code = #398005008
+* component[bemærkninger-graviditetsforløb].code.coding ^slicing.discriminator.type = #value
+* component[bemærkninger-graviditetsforløb].code.coding ^slicing.discriminator.path = "code"
+* component[bemærkninger-graviditetsforløb].code.coding ^slicing.ordered = false
+* component[bemærkninger-graviditetsforløb].code.coding ^slicing.rules = #open
+* component[bemærkninger-graviditetsforløb].code.coding 2..2
+* component[bemærkninger-graviditetsforløb].code.coding contains
+   qualifier-code 1..1  and
+   snomed-code 1..1
+* component[bemærkninger-graviditetsforløb].code.coding[qualifier-code].system = "GM-qualifiers"
+* component[bemærkninger-graviditetsforløb].code.coding[qualifier-code].code = #bemærkningerGraviditetsforløb
+* component[bemærkninger-graviditetsforløb].code.coding[snomed-code].system = $sct
+* component[bemærkninger-graviditetsforløb].code.coding[snomed-code].code = #398005008
 // type of child component
 * component[bemærkninger-graviditetsforløb].value[x] only string
 
 // code of child component
-* component[bemærkning-fødselsforløb].code.coding.code = #398005008
+* component[bemærkning-fødselsforløb].code.coding ^slicing.discriminator.type = #value
+* component[bemærkning-fødselsforløb].code.coding ^slicing.discriminator.path = "code"
+* component[bemærkning-fødselsforløb].code.coding ^slicing.ordered = false
+* component[bemærkning-fødselsforløb].code.coding ^slicing.rules = #open
+* component[bemærkning-fødselsforløb].code.coding 2..2
+* component[bemærkning-fødselsforløb].code.coding contains
+   qualifier-code 1..1  and
+   snomed-code 1..1
+* component[bemærkning-fødselsforløb].code.coding[qualifier-code].system = "GM-qualifiers"
+* component[bemærkning-fødselsforløb].code.coding[qualifier-code].code = #bemærkningFødselsforløb
+* component[bemærkning-fødselsforløb].code.coding[snomed-code].system = $sct
+* component[bemærkning-fødselsforløb].code.coding[snomed-code].code = #398005008
 // type of child component
 * component[bemærkning-fødselsforløb].value[x] only string
 

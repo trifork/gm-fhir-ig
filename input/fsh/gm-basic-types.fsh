@@ -116,7 +116,7 @@ Parent: RelatedPerson
 * identifier.use 0..0
 * identifier.type 0..0
 * identifier.system 1..1
-* identifier.system = "1.2.208.184.100.4"
+* identifier.system = "urn:oid:1.2.208.184.100.4"
 * identifier.value 1..1
 * identifier.period 0..0
 * identifier.assigner 0..0
@@ -243,13 +243,15 @@ Parent: Bundle
    organization 0..* and
    observation 0..* and
    condition 0..* and
-   procedure 0..*
+   procedure 0..* and
+   practitioner 0..*
 * entry[patient].resource only DkCorePatient
 * entry[fetus-related-person].resource only GMFetusRelatedPerson
 * entry[organization].resource only GMBaseOrganization
 * entry[observation].resource only GMObservation
 * entry[condition].resource only GMSomatiskDiagnoseTypeCondition
 * entry[procedure].resource only GMTidligereRelevantOperationProcedure
+* entry[practitioner].resource only GMSundhedsplejerskePractitioner
 
 Profile: GMPRFDocumentBundle
 Id: GMPRFDocumentBundle

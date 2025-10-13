@@ -331,7 +331,7 @@ Description: "The official pregnancy identifier"
 * valueIdentifier.use 0..0
 * valueIdentifier.type 0..0
 * valueIdentifier.system 1..1
-* valueIdentifier.system = "1.2.208.176.7.4.1"
+* valueIdentifier.system = "urn:oid:1.2.208.176.7.4.1"
 * valueIdentifier.value 1..1
 * valueIdentifier.period 0..0
 * valueIdentifier.assigner 0..0

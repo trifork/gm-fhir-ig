@@ -25,4 +25,3 @@ Parent: GMModelElement
 // type of child component
 * component[uddannelsesniveau].value[x] only CodeableConcept
 * component[uddannelsesniveau].valueCodeableConcept from VS-uddannelsesniveau
-//* extension[GMModelElementReference] 0..0

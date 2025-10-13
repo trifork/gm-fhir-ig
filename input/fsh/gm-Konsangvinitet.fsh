@@ -18,5 +18,3 @@ Parent: GMModelElement
 * component[konsangvinitet].code.coding.code = #842009
 // type of child component
 * component[konsangvinitet].value[x] only boolean
-
-//* extension[GMModelElementReference] 0..0

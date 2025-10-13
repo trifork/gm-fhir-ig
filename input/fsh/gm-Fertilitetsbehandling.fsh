@@ -36,5 +36,3 @@ Parent: GMModelElement
 * component[langvarigt-uhonoreret-graviditetsønske].code.coding.code = #169589005
 // type of child component
 * component[langvarigt-uhonoreret-graviditetsønske].value[x] only boolean
-
-//* extension[GMModelElementReference] 0..0

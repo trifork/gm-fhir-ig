@@ -18,5 +18,3 @@ Parent: GMModelElement
 * component[supplerende-oplysninger-om-overgreb/opvækst].code.coding.code = #405200007
 // type of child component
 * component[supplerende-oplysninger-om-overgreb/opvækst].value[x] only string
-
-//* extension[GMModelElementReference] 0..0

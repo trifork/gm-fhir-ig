@@ -19,4 +19,3 @@ Parent: GMModelElement
 // type of child component
 * component[fødselsforløbstræk].value[x] only CodeableConcept
 * component[fødselsforløbstræk].valueCodeableConcept from VS-foedselsforloebstraek
-//* extension[GMModelElementReference] 0..0

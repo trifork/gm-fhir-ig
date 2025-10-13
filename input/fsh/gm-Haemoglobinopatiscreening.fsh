@@ -25,4 +25,3 @@ Parent: GMModelElement
 // type of child component
 * component[resultat-type].value[x] only CodeableConcept
 * component[resultat-type].valueCodeableConcept from VS-resultat-type
-//* extension[GMModelElementReference] 0..0

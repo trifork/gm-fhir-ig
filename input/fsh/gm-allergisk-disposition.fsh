@@ -19,4 +19,3 @@ Parent: GMModelElement
 // type of child component
 * component[barn-disponeret].value[x] only CodeableConcept
 * component[barn-disponeret].valueCodeableConcept from VS-barn-disponeret
-//* extension[GMModelElementReference] 0..0

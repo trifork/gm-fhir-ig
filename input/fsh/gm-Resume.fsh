@@ -18,5 +18,3 @@ Parent: GMModelElement
 * component[resume-indslag].code.coding.code = #371534008
 // type of child component
 * component[resume-indslag].value[x] only string
-
-//* extension[GMModelElementReference] 0..0

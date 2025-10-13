@@ -18,5 +18,3 @@ Parent: GMModelElement
 * component[ønske-om-risikovurdering].code.coding.code = #568011000005108
 // type of child component
 * component[ønske-om-risikovurdering].value[x] only boolean
-
-//* extension[GMModelElementReference] 0..0

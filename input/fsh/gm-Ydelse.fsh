@@ -19,4 +19,3 @@ Parent: GMModelElement
 // type of child component
 * component[ydelsestype].value[x] only CodeableConcept
 * component[ydelsestype].valueCodeableConcept from VS-ydelse
-//* extension[GMModelElementReference] 0..0

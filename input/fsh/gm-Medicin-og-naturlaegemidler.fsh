@@ -29,5 +29,3 @@ Parent: GMModelElement
 * component[medicin-og-naturlægemidler].code.coding.code = #129019007
 // type of child component
 * component[medicin-og-naturlægemidler].value[x] only string
-
-//* extension[GMModelElementReference] 0..0

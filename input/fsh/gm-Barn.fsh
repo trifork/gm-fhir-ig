@@ -49,4 +49,3 @@ Parent: GMModelElement
 // type of child component
 * component[køn].value[x] only CodeableConcept
 * component[køn].valueCodeableConcept from VS-barns-koen
-//* extension[GMModelElementReference] 0..0

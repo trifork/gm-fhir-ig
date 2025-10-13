@@ -30,5 +30,3 @@ Parent: GMModelElement
 * component[sygemelding].code.coding.code = #224459001
 // type of child component
 * component[sygemelding].value[x] only boolean
-
-//* extension[GMModelElementReference] 0..0

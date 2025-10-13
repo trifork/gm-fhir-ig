@@ -48,5 +48,3 @@ Parent: GMModelElement
 * component[dato-rygeophør].code.coding.code = #160625004
 // type of child component
 * component[dato-rygeophør].value[x] only dateTime
-
-//* extension[GMModelElementReference] 0..0

@@ -24,5 +24,3 @@ Parent: GMModelElement
 * component[navn].code.coding.code = #703503000
 // type of child component
 * component[navn].value[x] only string
-
-//* extension[GMModelElementReference] 0..0

@@ -18,5 +18,3 @@ Parent: GMModelElement
 * component[bemærkninger-vedr-motion].code.coding.code = #256235009
 // type of child component
 * component[bemærkninger-vedr-motion].value[x] only string
-
-//* extension[GMModelElementReference] 0..0

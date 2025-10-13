@@ -24,5 +24,3 @@ Parent: GMModelElement
 * component[ønskes2trimesterscanning].code.coding.code = #567981000005100
 // type of child component
 * component[ønskes2trimesterscanning].value[x] only boolean
-
-//* extension[GMModelElementReference] 0..0

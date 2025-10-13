@@ -30,4 +30,4 @@ Parent: GMModelElement
 // type of child component
 * component[bemærkninger-fravalg-af-vacciner].value[x] only string
 
-//* extension[GMModelElementReference] 0..0
+//* extension[] 0..0

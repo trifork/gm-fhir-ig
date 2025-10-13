@@ -24,5 +24,3 @@ Parent: GMModelElement
 * component[den-gravide-har-allergi].code.coding.code = #781474001
 // type of child component
 * component[den-gravide-har-allergi].value[x] only boolean
-
-//* extension[GMModelElementReference] 0..0

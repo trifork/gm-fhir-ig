@@ -18,5 +18,3 @@ Parent: GMModelElement
 * component[graviditetsuge].code.coding.code = #598141000005108
 // type of child component
 * component[graviditetsuge].value[x] only integer
-
-//* extension[GMModelElementReference] 0..0

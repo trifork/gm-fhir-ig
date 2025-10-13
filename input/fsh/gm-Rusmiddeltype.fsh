@@ -19,4 +19,3 @@ Parent: GMModelElement
 // type of child component
 * component[type-rusmiddel/lægemiddel].value[x] only CodeableConcept
 * component[type-rusmiddel/lægemiddel].valueCodeableConcept from VS-type-rusmiddel-laegemiddel
-//* extension[GMModelElementReference] 0..0

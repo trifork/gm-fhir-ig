@@ -54,5 +54,3 @@ Parent: GMModelElement
 * component[udfordringer-fysisk-helbred].code.coding.code = #608001000005102
 // type of child component
 * component[udfordringer-fysisk-helbred].value[x] only boolean
-
-//* extension[GMModelElementReference] 0..0

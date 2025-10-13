@@ -24,5 +24,3 @@ Parent: GMModelElement
 * component[oplysninger-psykisk].code.coding.code = #247571009
 // type of child component
 * component[oplysninger-psykisk].value[x] only string
-
-//* extension[GMModelElementReference] 0..0

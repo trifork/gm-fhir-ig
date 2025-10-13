@@ -30,5 +30,3 @@ Parent: GMModelElement
 * component[bmi].code.coding.code = #60621009
 // type of child component
 * component[bmi].value[x] only Quantity
-
-//* extension[GMModelElementReference] 0..0
